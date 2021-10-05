@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { RiAdminLine } from "react-icons/ri";
 import { MdOutlinePublic } from "react-icons/md";
 import { VscOrganization } from "react-icons/vsc";
-import Carousel from "..Carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 import styles from "./home.module.css";
 function Home() {
   return (
@@ -24,7 +24,9 @@ function Home() {
         </div>
       </div>
       <div className={styles.flex}>
-        <div className={styles.cor}>a</div>
+        <div className={styles.cor}>
+          <Carousel />
+        </div>
         <div className={styles.pages}>
           <div className={styles.cont}>Continue As</div>
           <div className={styles.pagess}>

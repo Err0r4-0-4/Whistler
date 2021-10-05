@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-"dependencies": {
+  "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -19,24 +19,13 @@
     "react-simple-chatbot": "^0.6.1",
     "react-simple-typewriter": "^3.0.1",
     "redux": "^4.1.1",
+    "sawo-react": "^1.0.6",
     "solc": "^0.4.7",
-    "styled-components": "^5.3.0",
+    "styled-components": "^5.3.1",
     "truffle-hdwallet-provider": "^1.0.17",
     "typewriter-effect": "^2.18.0",
     "web-vitals": "^1.0.1",
     "web3": "^1.5.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "scripts": {
     "start": "react-scripts start",

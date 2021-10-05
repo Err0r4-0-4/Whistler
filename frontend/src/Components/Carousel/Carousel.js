@@ -1,5 +1,6 @@
 import React from "react";
-import "./styles.css";
+import styles from "./carousel.module.css";
+
 import makeCarousel from "react-reveal/makeCarousel";
 // we'll need the Slide component for sliding animations
 // but you can use any other effect
@@ -8,12 +9,14 @@ import Slide from "react-reveal/Slide";
 // but you can use any other styling options ( like plain old css )
 import styled, { css } from "styled-components";
 const width = "100%",
+  margin = " 10%",
   height = "150px";
 const Container = styled.div`
   border: 1px solid red;
   position: relative;
   overflow: hidden;
-  width: ${width};
+  width: 80%;
+  margin: ${margin};
 `;
 const Children = styled.div`
   width: ${width};
@@ -51,10 +54,10 @@ const Dots = styled.span`
   width: ${width};
   z-index: 100;
 `;
-const Carousel = ({ position, handleClick, children, total }) => {
+const CarouselUI = ({ position, handleClick, children, total }) => {
   return (
-    <Container>
-      <Children>
+    <div className={styles.comp}>
+      <div className={styles.child}>
         {children}
         <Arrow onClick={handleClick} data-position={position - 1}>
           {"<"}
@@ -62,27 +65,32 @@ const Carousel = ({ position, handleClick, children, total }) => {
         <Arrow right onClick={handleClick} data-position={position + 1}>
           {">"}
         </Arrow>
-      </Children>
+      </div>
 
-      <Dots>
+      <div className={styles.dot}>
         {Array(...Array(total)).map((val, index) => (
-          <Dot key={index} onClick={handleClick} data-position={index}>
+          <div
+            className={styles.dot2}
+            key={index}
+            onClick={handleClick}
+            data-position={index}
+          >
             {index === position ? "● " : "○ "}
-          </Dot>
+          </div>
         ))}
-      </Dots>
-    </Container>
+      </div>
+    </div>
   );
 };
-const Carousel = makeCarousel(CarouselUI);
+const Carousel1 = makeCarousel(CarouselUI);
 
-export default function App() {
+const Carousel = () => {
   return (
     <div className="App">
-      <Carousel
+      <Carousel1
         swipe={true}
         maxTurns={0}
-        defaultWait={1000} /*wait for 1000 milliseconds*/
+        defaultWait={1000}
       >
         <Slide right>
           <div>
@@ -96,8 +104,9 @@ export default function App() {
             <p>Slide Description</p>
           </div>
         </Slide>
-      </Carousel>
+      </Carousel1>
     </div>
   );
-}
+};
+
 export default Carousel;
