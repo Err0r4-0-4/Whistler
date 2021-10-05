@@ -1,39 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 
-const Admin = () => {
+const Factories = () => {
 
-  const [userName, setUserName] = useState(""); 
-  const [password, setPassword] = useState(""); 
+  const [factories, setFactories] = useState([]); 
   const [redirect, setRedirect] = useState(""); 
 
-  const onLoginHandler = () => {
-    const data = {
-        userName: userName,
-        password: password,
-      };
-  
-      console.log(data);
-  
+  useEffect(async () => {
+    try {
       axios
-        .post("http://localhost:9000/admin/login", data)
+        .post("http://localhost:9000/factory/getfactory")
         .then((res) => {
-         console.log(res);
+         console.log(res.data.message);
+         setFactories(res.data.message);
          setRedirect(true);
         })
         .catch((err) => {
           console.log(err);
         });
-  }
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
+  const factoriesList = (
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+      {addresses.map((address) => (
+        <FIR_detail darkTheme={darkTheme} address={address} />
+      ))}
+    </div>
+  );
 
   return (
 
     <div>
 
+        FACTORIES
        
     </div>
   );
 };
 
-export default Admin;
+export default Factories;

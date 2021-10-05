@@ -72,7 +72,7 @@ const Add = () => {
             <input type="text" placeholder="N.G.O. Email"
              onChange={(event) => setNGOEmail(event.target.value)}/>
 
-            <button onClick={onCreateFactory}>Add N.G.O.</button>
+            <button onClick={onCreateNGO}>Add N.G.O.</button>
         </div>
        
     </div>

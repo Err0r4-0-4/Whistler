@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 
-const NGO_Auth = () => {
+const Factory_Auth = () => {
 
   const [email, setEmail] = useState(""); 
   const [password, setPassword] = useState(""); 
@@ -17,7 +17,7 @@ const NGO_Auth = () => {
       console.log(data);
   
       axios
-        .post("https://whistler-backend.herokuapp.com/ngo/login", data)
+        .post("https://whistler-backend.herokuapp.com/factory/login", data)
         .then((res) => {
          console.log(res);
          setRedirect(true);
@@ -31,13 +31,13 @@ const NGO_Auth = () => {
 
     <div>
 
-        {redirect ? <Redirect to="/ngo" /> : null}
+        {redirect ? <Redirect to="/factory" /> : null}
 
         <div>ADMIN</div>
-        <input type="text" placeholder="N.G.O. Email"
+        <input type="text" placeholder="Factory Email"
             onChange={(event) => setEmail(event.target.value)}/>
 
-        <input type="text" placeholder="N.G.O. Password"
+        <input type="text" placeholder="Factory Password"
             onChange={(event) => setPassword(event.target.value)}/>
 
         <button onClick={onLoginHandler}>Login</button>
@@ -45,4 +45,4 @@ const NGO_Auth = () => {
   );
 };
 
-export default NGO_Auth;
+export default Factory_Auth;
