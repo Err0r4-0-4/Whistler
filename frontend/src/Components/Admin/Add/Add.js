@@ -4,23 +4,45 @@ import { Redirect } from "react-router-dom";
 
 const Add = () => {
 
-  const [userName, setUserName] = useState(""); 
-  const [password, setPassword] = useState(""); 
-  const [redirect, setRedirect] = useState(""); 
+  const [factoryName, setFactoryName] = useState(""); 
+  const [factoryEmail, setfactoryEmail] = useState(""); 
 
-  const onLoginHandler = () => {
+  const [NGOName, setNGOName] = useState(""); 
+  const [NGOEmail, setNGOEmail] = useState(""); 
+ 
+
+  const onCreateFactory = () => {
     const data = {
-        userName: userName,
-        password: password,
+        name: factoryName,
+        email: factoryEmail,
       };
   
       console.log(data);
   
       axios
-        .post("http://localhost:9000/admin/login", data)
+        .post("https://whistler-backend.herokuapp.com/factory/register", data)
         .then((res) => {
          console.log(res);
-         setRedirect(true);
+        //  setRedirect(true);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  }
+
+  const onCreateNGO = () => {
+    const data = {
+        name: NGOName,
+        email: NGOEmail,
+      };
+  
+      console.log(data);
+  
+      axios
+        .post("https://whistler-backend.herokuapp.com/ngo/register", data)
+        .then((res) => {
+         console.log(res);
+        //  setRedirect(true);
         })
         .catch((err) => {
           console.log(err);
@@ -31,6 +53,27 @@ const Add = () => {
 
     <div>
 
+        <div>
+            <div>Add Factory</div>
+            <input type="text" placeholder="Factory Name"
+             onChange={(event) => setFactoryName(event.target.value)}/>
+
+            <input type="text" placeholder="Factory Email"
+             onChange={(event) => setfactoryEmail(event.target.value)}/>
+
+            <button onClick={onCreateFactory}>Add Fatory</button>
+        </div>
+
+        <div>
+            <div>Add N.G.O.</div>
+            <input type="text" placeholder="N.G.O. Name"
+             onChange={(event) => setNGOName(event.target.value)}/>
+
+            <input type="text" placeholder="N.G.O. Email"
+             onChange={(event) => setNGOEmail(event.target.value)}/>
+
+            <button onClick={onCreateFactory}>Add N.G.O.</button>
+        </div>
        
     </div>
   );

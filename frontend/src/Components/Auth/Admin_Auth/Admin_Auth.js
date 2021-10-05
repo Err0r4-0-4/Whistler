@@ -17,7 +17,7 @@ const Admin_Auth = () => {
       console.log(data);
   
       axios
-        .post("http://localhost:9000/admin/login", data)
+        .post("https://whistler-backend.herokuapp.com/admin/login", data)
         .then((res) => {
          console.log(res);
          setRedirect(true);

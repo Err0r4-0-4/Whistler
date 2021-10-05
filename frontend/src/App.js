@@ -1,6 +1,7 @@
 import "./App.css";
 import Home from "./Components/Login/home";
 import Admin_Auth from "./Components/Auth/Admin_Auth/Admin_Auth";
+import Add from "./Components/Admin/Add/Add";
 import Public from "./Components/SawoApis/public";
 import Ngo from "./Components/SawoApis/ngo";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -14,6 +15,7 @@ function App() {
           <Route path="/public" exact component={Public} />
           <Route path="/ngo" exact component={Ngo} />
           <Route path="/admin/auth" exact component={Admin_Auth} />
+          <Route path="/admin/add" exact component={Add} />
         </Switch>
       </div>
     </Router>
