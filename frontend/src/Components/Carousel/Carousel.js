@@ -90,7 +90,7 @@ const Carousel = () => {
       <Carousel1
         swipe={true}
         maxTurns={0}
-        defaultWait={1000}
+        defaultWait={1000} /*wait for 1000 milliseconds*/
       >
         <Slide right>
           <div>
