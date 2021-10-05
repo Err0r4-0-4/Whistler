@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { RiAdminLine } from "react-icons/ri";
 import { MdOutlinePublic } from "react-icons/md";
 import { VscOrganization } from "react-icons/vsc";
+
+import { GoMarkGithub, GoMail } from "react-icons/go";
+import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
+import { MdCall, MdLocationSearching } from "react-icons/md";
 import Carousel from "../Carousel/Carousel";
 import styles from "./home.module.css";
 function Home() {
@@ -12,7 +17,8 @@ function Home() {
           <div className={styles.imageprofile}>
             {/* <img src={Img1} alt="logo pimage" className={styles.logo} /> */}
             <div className={styles.box}>
-              <span className={styles.do}>Whistler!</span>
+              Wh
+              <span className={styles.do}>I</span>stler !
             </div>
           </div>
         </div>
@@ -28,7 +34,7 @@ function Home() {
           <Carousel />
         </div>
         <div className={styles.pages}>
-          <div className={styles.cont}>Continue As</div>
+          <div className={styles.cont}>Continue As:</div>
           <div className={styles.pagess}>
             <Link to="/admin" className={styles.top}>
               <div>
@@ -55,6 +61,52 @@ function Home() {
               </h3>
             </Link>
           </div>
+          <div className={styles.cont2}>Having Problem Logging In?</div>
+        </div>
+      </div>
+      <div>
+        <div className={styles.footerbar}>
+          <div className={styles.loc}>
+            {/* <MdCall className={styles.icon} /> */}
+            <p className={styles.same}>
+              Environmental Issues{" "}
+              <span className={styles.err}>© Error 404</span>
+            </p>
+
+            {/* <span style={{ fontsize: "10px" }}>© Error 404</span> */}
+            {/* <a
+              href="tel:+91-848-785-9079"
+              target="_blank"
+              className={styles.but}
+            >
+              Call
+            </a> */}
+          </div>
+          <ul>
+            <li>
+              <a href="https://github.com/adityasingh03" target="_blank">
+                <GoMarkGithub />
+              </a>
+            </li>
+            <li>
+              <a href="/contact">
+                <GoMail />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/aditya-singh-8540a31ba/"
+                target="_blank"
+              >
+                <FaLinkedinIn />
+              </a>
+            </li>
+            <li>
+              <a href="tel:+91-848-785-9079" target="_blank">
+                <MdCall />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

@@ -1,37 +1,21 @@
 import React from "react";
 import styles from "./carousel.module.css";
+import img from "./../Images/user.png";
+import img1 from "./../Images/Ngo.png";
+import img2 from "./../Images/Admin.png";
 
 import makeCarousel from "react-reveal/makeCarousel";
-// we'll need the Slide component for sliding animations
-// but you can use any other effect
 import Slide from "react-reveal/Slide";
-// we'll use styled components for this tutorial
-// but you can use any other styling options ( like plain old css )
 import styled, { css } from "styled-components";
-const width = "100%",
-  margin = " 10%",
-  height = "150px";
-const Container = styled.div`
-  border: 1px solid red;
-  position: relative;
-  overflow: hidden;
-  width: 80%;
-  margin: ${margin};
-`;
-const Children = styled.div`
-  width: ${width};
-  position: relative;
-  height: ${height};
-`;
+
 const Arrow = styled.div`
   text-shadow: 1px 1px 1px #fff;
   z-index: 100;
-  line-height: ${height};
   text-align: center;
   position: absolute;
-  top: 0;
+  bottom: 40%;
   width: 10%;
-  font-size: 3em;
+  font-size: 1em;
   cursor: pointer;
   user-select: none;
   ${(props) =>
@@ -42,17 +26,6 @@ const Arrow = styled.div`
       : css`
           left: 0%;
         `}
-`;
-const Dot = styled.span`
-  font-size: 1.5em;
-  cursor: pointer;
-  text-shadow: 1px 1px 1px #fff;
-  user-select: none;
-`;
-const Dots = styled.span`
-  text-align: center;
-  width: ${width};
-  z-index: 100;
 `;
 const CarouselUI = ({ position, handleClick, children, total }) => {
   return (
@@ -86,22 +59,38 @@ const Carousel1 = makeCarousel(CarouselUI);
 
 const Carousel = () => {
   return (
-    <div className="App">
+    <div className={styles.full}>
       <Carousel1
         swipe={true}
         maxTurns={0}
-        defaultWait={1000} /*wait for 1000 milliseconds*/
+        defaultWait={2000} /*wait for 1000 milliseconds*/
       >
         <Slide right>
           <div>
-            <h1>Slide 1</h1>
-            <p>Slide Description</p>
+            <img src={img2} alt="Admin" className={styles.img} />
+            <p>
+              Admin will be governor of the whole process. They can add new
+              factories and NGOs and take actions on complaints.
+            </p>
           </div>
         </Slide>
         <Slide right>
           <div>
-            <h1>Slide 2</h1>
-            <p>Slide Description</p>
+            <img src={img1} alt="Ngo" className={styles.img} />
+            <p>
+              NGOs can register remotely and then login to take active part in
+              whole process.{" "}
+            </p>
+          </div>
+        </Slide>
+        <Slide right>
+          <div>
+            <img src={img} alt="User" className={styles.img} />
+
+            <p>
+              User can file complaints along with its proof and track the
+              actions taken on your complaint.
+            </p>
           </div>
         </Slide>
       </Carousel1>
