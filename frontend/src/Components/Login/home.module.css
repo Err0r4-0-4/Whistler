@@ -334,6 +334,58 @@ font-family: 'Unica One', cursive;*/
     margin-top: 10px;
   }
 }
+@media all and (max-width: 650px) {
+  .box {
+    font-size: 40px;
+  }
+  .fifty {
+    flex: 30%;
+    width: 30%;
+  }
+  .select {
+    padding: 5px;
+    min-width: 150px;
+    margin-right: 10px;
+  }
+  .select a {
+    min-width: 140px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .pages a {
+    max-height: 55px;
+    min-height: 60px;
+  }
+  .pages a h3 {
+    padding: 10px;
+  }
+  .pages a h3 span {
+    padding: 10px;
+  }
+  .icon {
+    font-size: 28px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .box {
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+  .select {
+    padding: 3px;
+    min-width: 100px;
+    margin-right: 20px;
+  }
+  .select a {
+    min-width: 100px;
+    font-size: 16px;
+  }
+  .cont {
+    font-size: 12px;
+  }
+}
 /*Footbar*/
 .footerbar {
   position: fixed;
