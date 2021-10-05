@@ -9,6 +9,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.password,
   },
 });
+exports.ngoCount = 0;
 
 exports.register = async (req, res, next) => {
   try {
@@ -19,6 +20,7 @@ exports.register = async (req, res, next) => {
       email: email,
       password: password,
       name: name,
+      ngoId: ngoCount++,
     });
     await ng.save();
     var mailOptions = {

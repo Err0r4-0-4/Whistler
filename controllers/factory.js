@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.password,
   },
 });
-let count = 0;
+exports.factoryCount = 0;
 exports.register = async (req, res, next) => {
   try {
     const email = req.body.email;
@@ -19,7 +19,7 @@ exports.register = async (req, res, next) => {
       email: email,
       password: password,
       name: name,
-      factoryId: count++,
+      factoryId: factoryCount++,
     });
     await fact.save();
     var mailOptions = {

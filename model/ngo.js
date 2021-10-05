@@ -15,6 +15,10 @@ const ngoSchema = new schema({
     type: String,
     require: true,
   },
+  ngoId: {
+    type: String,
+    require: true,
+  },
 });
 
 module.exports = mongoose.model("ngo", ngoSchema);

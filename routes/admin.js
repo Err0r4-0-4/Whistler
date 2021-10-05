@@ -5,5 +5,5 @@ const adminController = require("../controllers/admin");
 const route = express.Router();
 
 route.post("/login", adminController.loginAdmin);
-//route.post("/login", userController.login);
+route.post("/assignNgo", adminController.assignNgo);
 module.exports = route;
