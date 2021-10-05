@@ -1,0 +1,257 @@
+/*font-family: 'Changa One', cursive;
+font-family: 'Ephesis', cursive;
+font-family: 'Gemunu Libre', sans-serif;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Unica One', cursive;*/
+.login {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+  height: 15vh;
+}
+.logo_name {
+  height: 10vh;
+  width: 100%;
+  margin: 30px 50px 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 100%;
+  position: relative;
+}
+.fifty {
+  width: 45%;
+  flex: 45%;
+  height: 10vh;
+  margin: 30px 50px 0;
+}
+.imageprofile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 55%;
+}
+.logo {
+  height: 15vh;
+  margin: 0 20px 0 0;
+}
+
+.select {
+  width: 50%;
+  margin: auto;
+  padding: 2px 2px;
+  min-width: 200px;
+}
+
+.select a {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 2px;
+  min-width: none;
+  border: 1px solid #009c00;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  z-index: 1;
+  background-color: rgb(248, 248, 248);
+  padding: 10px;
+  color: #7fc02b;
+  text-transform: uppercase;
+  font-family: "Gemunu Libre", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  transition: all ease 0.4s;
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+}
+
+.select a:hover {
+  background-color: #7fc02b;
+  color: white;
+  letter-spacing: 2px;
+}
+.flex {
+  width: 90%;
+  margin: 150px 5% 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cor,
+.pages {
+  flex: 49%;
+  width: 49%;
+}
+.pages {
+}
+
+.pagess {
+  box-shadow: 0px 0px 5px rgb(184, 184, 184);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: white;
+}
+
+.pages a {
+  display: block;
+  width: 100%;
+  margin: 0;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000;
+  transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  background-color: white;
+  -o-transition: all ease-in-out 0.3s;
+}
+
+.icon {
+  color: #009c00;
+  background-color: white;
+  font-size: 35px;
+  transition: all ease-in-out 0.3s;
+  padding: 5px 15px;
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+}
+
+.pages a h3 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  transition: all ease-in-out 0.3s;
+  padding: 18px;
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+}
+
+.pages a h3 span {
+  padding: 18px;
+  letter-spacing: 2px;
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all ease-in-out 0.3s;
+  color: rgb(127, 192, 43);
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  font-family: "Gemunu Libre", sans-serif;
+}
+.pages .top {
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+  border-bottom: 0.25px solid #dfdfdf;
+}
+
+.pages .bottom {
+  border-top: 0.25px solid #dfdfdf;
+
+  border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+}
+
+.pagess:hover {
+  background-color: #7fc02b;
+}
+.pages a:hover,
+.pages a:active {
+  z-index: 10;
+  width: 105%;
+  margin: -1px -2.5%;
+  border-radius: 5px;
+  background-color: #7fc02b;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  outline: none;
+  border-left: 5px solid rgb(77, 128, 11);
+}
+
+.pages a:hover h3 span,
+.pages a:active h3 span {
+  color: rgb(77, 128, 11);
+  letter-spacing: 5px;
+  font-weight: 600;
+  font-size: 32px;
+  padding: 12px;
+}
+
+.pages a:hover h3,
+.pages a:active h3 {
+  color: white;
+}
+
+.pages a:hover .icon,
+.pages a:active .icon {
+  background-color: rgb(127, 192, 43);
+  color: white;
+  font-size: 36px;
+  padding-left: 80px;
+  animation-name: move;
+  animation-duration: 0.5s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+  0% {
+    padding-left: 25px;
+  }
+
+  100% {
+    padding-left: 80px;
+  }
+}
+
+@keyframes movenot {
+  0% {
+    padding-left: 25px;
+  }
+
+  100% {
+    padding-left: 80px;
+  }
+}
