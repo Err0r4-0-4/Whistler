@@ -1,4 +1,4 @@
-const ngo = require("../model/ngo");
+const factory = require("../model/factory");
 const nodemailer = require("nodemailer");
 //const { reset } = require("nodemon");
 const jwt = require("jsonwebtoken");
@@ -9,18 +9,19 @@ const transporter = nodemailer.createTransport({
     pass: process.env.password,
   },
 });
-
+let count = 0;
 exports.register = async (req, res, next) => {
   try {
     const email = req.body.email;
     const password = Math.random().toString(36).slice(-8);
     const name = req.body.name;
-    const ng = new ngo({
+    const fact = new factory({
       email: email,
       password: password,
       name: name,
+      factoryId: count++,
     });
-    await ng.save();
+    await fact.save();
     var mailOptions = {
       from: process.env.email,
       to: email,
@@ -31,7 +32,7 @@ exports.register = async (req, res, next) => {
       .sendMail(mailOptions)
       .then(async (result) => {
         console.log(result);
-        res.status(200).send({ message: "NGO register successfully!" });
+        res.status(200).send({ message: "fact register successfully!" });
       })
       .catch((err) => {
         console.log(err);
@@ -44,24 +45,35 @@ exports.register = async (req, res, next) => {
   }
 };
 
-exports.loginNgo = async (req, res, next) => {
+exports.loginFactory = async (req, res, next) => {
   try {
     let email = req.body.email.toLowerCase();
     let password = req.body.password.toLowerCase();
-    let ngo = await ngo.findOne({
+    let fact = await factory.findOne({
       $and: [{ email: email }, { password: password }],
     });
-    if (!ngo) {
-      res.status(400).send({ message: "ngo not found!" });
+    if (!fact) {
+      res.status(400).send({ message: "fact not found!" });
       return;
     }
-    const token = jwt.sign({ ngoId: ngo.id }, "secret", {
+    const token = jwt.sign({ factId: fact.id }, "secret", {
       expiresIn: "11h",
     });
 
-    res.status(200).send({ token: token, ngoId: ngo.id });
+    res.status(200).send({ token: token, factId: fact.id });
     return;
   } catch (error) {
+    console.log(error);
+    res.status(200).send({ message: error.message });
+    return;
+  }
+};
+
+exports.getFactory = async (req, res, next) => {
+  try {
+    let factorys = await factory.find().select("-password");
+    res.status(200).send({ message: factorys });
+  } catch {
     console.log(error);
     res.status(200).send({ message: error.message });
     return;
