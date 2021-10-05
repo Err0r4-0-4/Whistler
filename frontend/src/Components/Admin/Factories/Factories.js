@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Factory from "../../Cards/Factory/Factory";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 
@@ -25,9 +26,12 @@ const Factories = () => {
   }, []);
 
   const factoriesList = (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {addresses.map((address) => (
-        <FIR_detail darkTheme={darkTheme} address={address} />
+    <div>
+      {factories.map((factory) => (
+        <Factory
+        name={factory.name}
+        email={factory.email}
+        id={factory.factoryId}/>
       ))}
     </div>
   );
@@ -36,6 +40,7 @@ const Factories = () => {
 
     <div>
 
+        {factoriesList}
         FACTORIES
        
     </div>
