@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const schema = mongoose.Schema;
 
-const ngoSchema = new schema({
+const factorySchema = new schema({
   name: {
     type: String,
     require: true,
@@ -15,6 +15,10 @@ const ngoSchema = new schema({
     type: String,
     require: true,
   },
+  factoryId: {
+    type: String,
+    require: true,
+  },
 });
 
-module.exports = mongoose.model("ngo", ngoSchema);
+module.exports = mongoose.model("factory", factorySchema);

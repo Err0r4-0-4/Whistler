@@ -36,7 +36,7 @@ function Home() {
         <div className={styles.pages}>
           <div className={styles.cont}>Continue As:</div>
           <div className={styles.pagess}>
-            <Link to="/admin" className={styles.top}>
+            <Link to="/admin/auth" className={styles.top}>
               <div>
                 <RiAdminLine className={styles.icon} />
               </div>
