@@ -1,4 +1,4 @@
-const ngo = require("../model/ngo");
+const Ngo = require("../model/ngo");
 const nodemailer = require("nodemailer");
 //const { reset } = require("nodemon");
 const jwt = require("jsonwebtoken");
@@ -18,7 +18,7 @@ exports.register = async (req, res, next) => {
     const email = req.body.email;
     const password = Math.random().toString(36).slice(-8);
     const name = req.body.name;
-    const ng = new ngo({
+    const ng = new Ngo({
       email: email,
       password: password,
       name: name,
@@ -52,7 +52,7 @@ exports.loginNgo = async (req, res, next) => {
   try {
     let email = req.body.email.toLowerCase();
     let password = req.body.password.toLowerCase();
-    let ngo = await ngo.findOne({
+    let ngo = await Ngo.findOne({
       $and: [{ email: email }, { password: password }],
     });
     if (!ngo) {
@@ -67,7 +67,7 @@ exports.loginNgo = async (req, res, next) => {
     return;
   } catch (error) {
     console.log(error);
-    res.status(200).send({ message: error.message });
+    res.status(400).send({ message: error.message });
     return;
   }
 };

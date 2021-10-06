@@ -31,6 +31,7 @@ exports.assignNgo = async (req, res, next) => {
     let ngoCount = await (await Factory.find()).length;
     let ngoId = req.body.random % ngoCount;
     let n = await ngo.find({ ngoId: ngoId });
+    console.log(n);
     await ngo.findOneAndUpdate(
       { ngoId: ngoId },
       {
