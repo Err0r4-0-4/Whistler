@@ -38,7 +38,7 @@ exports.assignNgo = async (req, res, next) => {
     factory.onDate = req.body.date;
     factory.ngoName = ng.name;
     await factory.save();
-    res.status(200).send({ message: "ok done!" });
+    res.status(200).send({ message: "ok Done!" });
     return;
   } catch (error) {
     console.log(error);
