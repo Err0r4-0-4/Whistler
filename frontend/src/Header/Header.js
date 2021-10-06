@@ -50,7 +50,7 @@ const Header = () => {
           </li>
 
           <li>
-            <NavLink to="/skills" activeClassName={styles.active}>
+            <NavLink to="/admin/factories" activeClassName={styles.active}>
               Assign
             </NavLink>
           </li>

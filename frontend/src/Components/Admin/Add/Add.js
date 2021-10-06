@@ -9,7 +9,7 @@ import { RiAdminLine } from "react-icons/ri";
 import { MdOutlinePublic } from "react-icons/md";
 import { VscOrganization } from "react-icons/vsc";
 import ParticlesBg from "particles-bg";
-
+import Footer from "../../../Footer/Footer";
 import { GoMarkGithub, GoMail } from "react-icons/go";
 import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
@@ -141,6 +141,8 @@ const Add = () => {
           </button>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
