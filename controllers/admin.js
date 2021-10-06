@@ -1,5 +1,5 @@
 const Admin = require("../model/admin");
-const factory = require("../model/factory");
+const Factory = require("../model/factory");
 const ngo = require("../model/ngo");
 const ngoCount = require("./ngo").ngoCount;
 const factoryCount = require("./ngo").factoryCount;
@@ -32,9 +32,10 @@ exports.assignNgo = async (req, res, next) => {
   try {
     let ngoId = req.body.random % ngoCount;
     let ng = ngo.find({ ngoId: ngoId });
-    let factory = factory.find({ factoryId: req.body.factoryId });
+    let factory = Factory.find({ factoryId: req.body.factoryId });
     factory.isAssigned = true;
     factory.date = new Date();
+    factory.onDate = req.body.date;
     factory.ngoName = ng.name;
     await factory.save();
     res.status(200).send({ message: "ok done!" });

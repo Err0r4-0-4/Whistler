@@ -24,8 +24,12 @@ const factorySchema = new schema({
     default: false,
   },
   date: {
-    type: String,
-    default: "",
+    type: Date,
+    required: false,
+  },
+  onDate: {
+    type: Date,
+    required: false,
   },
   ngoName: {
     type: String,
