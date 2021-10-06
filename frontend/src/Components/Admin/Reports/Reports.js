@@ -88,20 +88,6 @@ const Reports = () => {
 
   const reportsList = (
     <div>
-<<<<<<< HEAD
-      {reports.map((report) => (
-
-        <Report
-            chemical={report.chemical_name}
-            date={report.date}
-            inspector={report.inspector}
-            ngo={report.ngo_name}
-            quantity={report.quantity}
-            remarks={report.remarks}
-            treated={report.treated}
-        />
-        
-=======
       <input type="search" onChange={searchHandler} />
       {reports1.map((report) => (
         <Report
@@ -113,7 +99,6 @@ const Reports = () => {
           remarks={report.remarks}
           treated={report.treated}
         />
->>>>>>> ce636e525c9603c23bc3406f69aff6cbe01c97d5
       ))}
     </div>
   );

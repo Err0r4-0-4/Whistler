@@ -10,6 +10,7 @@ import Ngo from "./Components/SawoApis/ngo";
 import Inspect from "./Components/NGO/Inspect/Inspect";
 import Reports from "./Components/Admin/Reports/Reports";
 import File from "./Components/Public/File/File";
+import Complains from "./Components/Public/complains/complains";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Assign from "./Components/Assign/Assign";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/assign" exact component={Assign} />
           <Route path="/reports" exact component={Reports} />
           <Route path="/file" exact component={File} />
+          <Route path="/compalins" exact component={Complains} />
         </Switch>
       </div>
     </Router>
