@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Factory from "../../Cards/Factory/Factory";
+import styles from "./Reports.module.css";
 import axios from "axios";
 import web3 from "../../../ethereum/web3";
 import Whistler from "../../../ethereum/whistler";
 import Report from "../../Cards/Report/Report";
 import { Redirect } from "react-router-dom";
-
+import Header from "../../../Header/Header";
+import Footer from "../../../Footer/Footer";
 const Reports = () => {
   const [reports, setReports] = useState([]);
   const [reports1, setReports1] = useState([]);
@@ -86,8 +88,13 @@ const Reports = () => {
   };
 
   const reportsList = (
-    <div>
-      <input type="search" onChange={searchHandler} />
+    <div className={styles.flex}>
+      <input
+        type="search"
+        onChange={searchHandler}
+        className={styles.search}
+        placeholder="Search"
+      />
       {reports1.map((report) => (
         <Report
           chemical={report.chemical_name}
@@ -103,9 +110,15 @@ const Reports = () => {
   );
 
   return (
-    <div>
-      {reportsList}
-      REPORTS
+    <div className={styles.pages}>
+      <Header />
+      <div className={styles.box}>
+        <div className={styles.bar}>
+          <p>Complaints</p>
+        </div>
+        {reportsList}
+      </div>
+      <Footer />
     </div>
   );
 };
