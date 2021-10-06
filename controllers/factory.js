@@ -77,7 +77,18 @@ exports.getFactory = async (req, res, next) => {
     res.status(200).send({ message: factorys });
   } catch {
     console.log(error);
-    res.status(200).send({ message: error.message });
+    res.status(400).send({ message: error.message });
+    return;
+  }
+};
+
+exports.getFactoryCount = (req, res, next) => {
+  try {
+    let factoryCount = await(await factory.find()).length;
+    res.status(200).send({ factoryCount: factoryCount });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ message: error.message });
     return;
   }
 };
