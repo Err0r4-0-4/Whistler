@@ -66,7 +66,7 @@ const Factory_Auth = () => {
         <input
           type="text"
           placeholder="Factory Email"
-          onChange={(event) => setUserName(event.target.value)}
+          onChange={(event) => setEmail(event.target.value)}
           className={styles.inp}
         />
 
