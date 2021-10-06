@@ -17,6 +17,15 @@ const Reports = () => {
 
     try {
 
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        var yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+
+        setCount(today);
+
         let reportsArray = [];
 
       await axios
@@ -83,6 +92,7 @@ const Reports = () => {
   const reportsList = (
     <div>
       {reports.map((report) => (
+
         <Report
             chemical={report.chemical_name}
             date={report.date}
@@ -91,7 +101,8 @@ const Reports = () => {
             quantity={report.quantity}
             remarks={report.remarks}
             treated={report.treated}
-       />
+        />
+        
       ))}
     </div>
   );
