@@ -32,12 +32,15 @@ exports.assignNgo = async (req, res, next) => {
   try {
     let ngoId = req.body.random % ngoCount;
     let ng = ngo.find({ ngoId: ngoId });
-    let factory = await Factory.find({ factoryId: req.body.factoryId });
-    factory.isAssigned = true;
-    factory.date = new Date();
-    factory.onDate = req.body.date;
-    factory.ngoName = ng.name;
-    await factory.save();
+    let factory = await Factory.findOneAndUpdate(
+      { factoryId: req.body.factoryId },
+      {
+        isAssigned: true,
+        date: new Date(),
+        onDate: req.body.date,
+        ngoName: ng.name,
+      }
+    );
     res.status(200).send({ message: "ok Done!" });
     return;
   } catch (error) {
