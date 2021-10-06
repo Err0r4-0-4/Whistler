@@ -8,6 +8,8 @@ import Add from "./Components/Admin/Add/Add";
 import Public from "./Components/SawoApis/public";
 import Ngo from "./Components/SawoApis/ngo";
 import Inspect from "./Components/NGO/Inspect/Inspect";
+import Reports from "./Components/Admin/Reports/Reports";
+import File from "./Components/Public/File/File";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Assign from "./Components/Assign/Assign";
@@ -27,6 +29,8 @@ function App() {
           <Route path="/admin/add" exact component={Add} />
           <Route path="/inspect" exact component={Inspect} />
           <Route path="/assign" exact component={Assign} />
+          <Route path="/reports" exact component={Reports} />
+          <Route path="/file" exact component={File} />
         </Switch>
       </div>
     </Router>
