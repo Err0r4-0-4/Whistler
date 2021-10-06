@@ -10,7 +10,11 @@ import Ngo from "./Components/SawoApis/ngo";
 import Inspect from "./Components/NGO/Inspect/Inspect";
 import Reports from "./Components/Admin/Reports/Reports";
 import File from "./Components/Public/File/File";
+<<<<<<< HEAD
 import Complains from "./Components/Public/complains/complains";
+=======
+import Help from "./Components/Help/Help";
+>>>>>>> 23ca7a363e51515cef4f8bce76b4cd3cd77a4a18
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Assign from "./Components/Assign/Assign";
@@ -21,12 +25,13 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/help" exact component={Help} />
           <Route path="/public" exact component={Public} />
           <Route path="/ngo" exact component={Ngo} />
           <Route path="/admin/auth" exact component={Admin_Auth} />
-          <Route path="/factories" exact component={Factories} />
+          <Route path="/admin/factories" exact component={Factories} />
           <Route path="/ngo/auth" exact component={NGO_Auth} />
-          <Route path="/factory/auth" exact component={Factory_Auth}/>
+          <Route path="/factory/auth" exact component={Factory_Auth} />
           <Route path="/admin/add" exact component={Add} />
           <Route path="/inspect" exact component={Inspect} />
           <Route path="/assign" exact component={Assign} />

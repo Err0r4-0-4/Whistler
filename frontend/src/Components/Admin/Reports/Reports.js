@@ -15,17 +15,16 @@ const Reports = () => {
     const accounts = await web3.eth.getAccounts();
 
     try {
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0");
+      var yyyy = today.getFullYear();
 
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-        var yyyy = today.getFullYear();
+      today = mm + "/" + dd + "/" + yyyy;
 
-        today = mm + '/' + dd + '/' + yyyy;
+      setCount(today);
 
-        setCount(today);
-
-        let reportsArray = [];
+      let reportsArray = [];
 
       await axios
         .post("https://whistler-backend.herokuapp.com/factory/count")
