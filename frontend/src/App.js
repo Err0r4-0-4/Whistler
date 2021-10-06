@@ -10,11 +10,8 @@ import Ngo from "./Components/SawoApis/ngo";
 import Inspect from "./Components/NGO/Inspect/Inspect";
 import Reports from "./Components/Admin/Reports/Reports";
 import File from "./Components/Public/File/File";
-<<<<<<< HEAD
 import Complains from "./Components/Public/complains/complains";
-=======
 import Help from "./Components/Help/Help";
->>>>>>> 23ca7a363e51515cef4f8bce76b4cd3cd77a4a18
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Assign from "./Components/Assign/Assign";
