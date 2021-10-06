@@ -1,80 +1,146 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import styles from "./Add.module.css";
+import Header from "../../../Header/Header";
+import img from "../../Images/user.png";
+import { Link } from "react-router-dom";
+import { RiAdminLine } from "react-icons/ri";
+import { MdOutlinePublic } from "react-icons/md";
+import { VscOrganization } from "react-icons/vsc";
+import ParticlesBg from "particles-bg";
 
+import { GoMarkGithub, GoMail } from "react-icons/go";
+import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
+import { MdCall, MdLocationSearching } from "react-icons/md";
 const Add = () => {
+  const [open1, setopen1] = useState(false);
+  const fun1 = () => {
+    setopen1(!open1);
+  };
 
-  const [factoryName, setFactoryName] = useState(""); 
-  const [factoryEmail, setfactoryEmail] = useState(""); 
+  const [open2, setopen2] = useState(false);
+  const fun2 = () => {
+    setopen2(!open2);
+  };
+  const [factoryName, setFactoryName] = useState("");
+  const [factoryEmail, setfactoryEmail] = useState("");
 
-  const [NGOName, setNGOName] = useState(""); 
-  const [NGOEmail, setNGOEmail] = useState(""); 
- 
+  const [NGOName, setNGOName] = useState("");
+  const [NGOEmail, setNGOEmail] = useState("");
 
   const onCreateFactory = () => {
     const data = {
-        name: factoryName,
-        email: factoryEmail,
-      };
-  
-      console.log(data);
-  
-      axios
-        .post("https://whistler-backend.herokuapp.com/factory/register", data)
-        .then((res) => {
-         console.log(res);
+      name: factoryName,
+      email: factoryEmail,
+    };
+
+    console.log(data);
+
+    axios
+      .post("https://whistler-backend.herokuapp.com/factory/register", data)
+      .then((res) => {
+        console.log(res);
         //  setRedirect(true);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const onCreateNGO = () => {
     const data = {
-        name: NGOName,
-        email: NGOEmail,
-      };
-  
-      console.log(data);
-  
-      axios
-        .post("https://whistler-backend.herokuapp.com/ngo/register", data)
-        .then((res) => {
-         console.log(res);
+      name: NGOName,
+      email: NGOEmail,
+    };
+
+    console.log(data);
+
+    axios
+      .post("https://whistler-backend.herokuapp.com/ngo/register", data)
+      .then((res) => {
+        console.log(res);
         //  setRedirect(true);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
+    <div className={styles.page}>
+      <Header />
 
-    <div>
-
-        <div>
-            <div>Add Factory</div>
-            <input type="text" placeholder="Factory Name"
-             onChange={(event) => setFactoryName(event.target.value)}/>
-
-            <input type="text" placeholder="Factory Email"
-             onChange={(event) => setfactoryEmail(event.target.value)}/>
-
-            <button onClick={onCreateFactory}>Add Fatory</button>
+      <div className={styles.add1}>
+        <div className={styles.open1} onClick={fun1}>
+          <div className={styles.add1}>
+            {open1 ? "Close Form-" : "Add a new factory +"}
+          </div>
         </div>
 
-        <div>
-            <div>Add N.G.O.</div>
-            <input type="text" placeholder="N.G.O. Name"
-             onChange={(event) => setNGOName(event.target.value)}/>
+        <div className={open1 ? styles.box : styles.hidden}>
+          <div className={styles.imgback}>
+            <img src={img} className={styles.img} />
+          </div>
+          <div className={open1 ? styles.tag : styles.hidden}>Add Factory</div>
+          <input
+            type="text"
+            placeholder="Factory Name"
+            className={open1 ? styles.inp : styles.hidden}
+            onChange={(event) => setFactoryName(event.target.value)}
+          />
 
-            <input type="text" placeholder="N.G.O. Email"
-             onChange={(event) => setNGOEmail(event.target.value)}/>
+          <input
+            type="text"
+            placeholder="Factory Email"
+            className={open1 ? styles.inp : styles.hidden}
+            onChange={(event) => setfactoryEmail(event.target.value)}
+          />
 
-            <button onClick={onCreateNGO}>Add N.G.O.</button>
+          <button
+            onClick={onCreateFactory}
+            className={open1 ? styles.btn : styles.hidden}
+          >
+            Add Fatory
+          </button>
         </div>
-       
+      </div>
+
+      <div>
+        <div className={styles.open1} onClick={fun2}>
+          <div className={styles.add1}>
+            {open2 ? "Close Form -" : "Add a new N.G.O. +"}
+          </div>
+        </div>
+
+        <div className={open2 ? styles.box : styles.hidden}>
+          <div className={styles.imgback}>
+            <img src={img} className={styles.img} />
+          </div>
+          <div className={open2 ? styles.tag : styles.hidden}>Add N.G.O.</div>
+          <input
+            type="text"
+            placeholder="N.G.O. Name"
+            onChange={(event) => setNGOName(event.target.value)}
+            className={open2 ? styles.inp : styles.hidden}
+          />
+
+          <input
+            type="text"
+            placeholder="N.G.O. Email"
+            onChange={(event) => setNGOEmail(event.target.value)}
+            className={open2 ? styles.inp : styles.hidden}
+          />
+
+          <button
+            onClick={onCreateNGO}
+            className={open2 ? styles.btn : styles.hidden}
+          >
+            Add N.G.O.
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
