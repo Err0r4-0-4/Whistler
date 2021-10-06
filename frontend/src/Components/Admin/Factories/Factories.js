@@ -11,7 +11,7 @@ const Factories = () => {
   useEffect(async () => {
     try {
       axios
-        .post("http://localhost:9000/factory/getfactory")
+        .post("https://whistler-backend.herokuapp.com/factory/getfactory")
         .then((res) => {
          console.log(res.data.message);
          setFactories(res.data.message);

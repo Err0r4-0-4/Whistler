@@ -13,8 +13,6 @@ const File = (props) => {
 
       console.log("aaa");
 
-     
-
     }
 
   return (
