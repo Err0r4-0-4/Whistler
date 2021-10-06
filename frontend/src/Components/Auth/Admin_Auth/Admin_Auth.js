@@ -7,12 +7,44 @@ import { Link } from "react-router-dom";
 import { RiAdminLine } from "react-icons/ri";
 import { MdOutlinePublic } from "react-icons/md";
 import { VscOrganization } from "react-icons/vsc";
+import ParticlesBg from "particles-bg";
 
 import { GoMarkGithub, GoMail } from "react-icons/go";
 import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
 const Admin_Auth = () => {
+  let config = {
+    num: [1, 1],
+    rps: 0.1,
+    radius: [1, 1],
+    life: [1, 1],
+    v: [1, 1],
+    tha: [-2, 2],
+    // body: "./img/icon.png", // Whether to render pictures
+    // rotate: [0, 20],
+    alpha: [0.6, 0],
+    scale: [1, 0.1],
+    position: "center", // all or center or {x:1,y:1,width:100,height:100}
+    color: ["#04a045"],
+    cross: "dead", // cross or bround
+    random: 1, // or null,
+    g: 5, // gravity
+    // f: [2, -1], // force
+    onParticleUpdate: (ctx, particle) => {
+      ctx.beginPath();
+      ctx.rect(
+        particle.p.x,
+        particle.p.y,
+        particle.radius * 2,
+        particle.radius * 2
+      );
+      ctx.fillStyle = particle.color;
+      ctx.fill();
+      ctx.closePath();
+    },
+  };
+
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState("");
@@ -37,7 +69,7 @@ const Admin_Auth = () => {
   };
 
   return (
-    <div>
+    <div className={styles.fullpage}>
       <div className={styles.header}>
         <div className={styles.logo_name}>
           <div className={styles.imageprofile}>
@@ -122,6 +154,8 @@ const Admin_Auth = () => {
           </li>
         </ul>
       </div>
+
+      <ParticlesBg type="cobweb" color="#33d677" bg={true} />
     </div>
   );
 };

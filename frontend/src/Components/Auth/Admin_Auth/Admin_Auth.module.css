@@ -1,3 +1,12 @@
+.fullpage {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e7b62d;
+  font-family: "Montserrat", sans-serif;
+  background-color: #bceed1;
+  z-index: 1;
+  position: relative;
+}
 .header {
   width: 100%;
   display: flex;
@@ -61,7 +70,9 @@
   z-index: 1;
   background-color: rgb(248, 248, 248);
   padding: 7px;
-  color: #04a045;
+  color: #f5f5f5;
+  background-color: #08ac4c;
+
   text-transform: uppercase;
   font-family: "Gemunu Libre", sans-serif;
   font-size: 24px;
@@ -75,14 +86,13 @@
 }
 
 .select a:hover {
-  background-color: #d6f3e2;
-  color: white;
+  background-color: white;
+  color: #009c00;
   letter-spacing: 2px;
+  box-shadow: 1px 1px 20px #009c00;
 }
 
 .box {
-  background-color: #b2f1cc;
-  border: 2px solid #04a045;
   width: 30%;
   margin: 80px auto;
   position: relative;
@@ -90,12 +100,13 @@
   padding-bottom: 20px;
   min-width: 350px;
   padding-top: 90px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  box-shadow: 1px 1px 10px rgb(124, 124, 124);
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  box-shadow: 0px 0px 10px rgb(124, 124, 124);
+  background-color: #f1f0f0;
 }
 
 .tag {
@@ -141,20 +152,31 @@
   max-width: 335px;
   outline: none;
   border: none;
-  background-color: #b2f1cc;
+  min-width: 320px;
 }
 
 .inp {
   width: 90%;
   margin: 25px auto;
   border-bottom: 2px solid #009c00;
+  background-color: #f1f0f0;
+  letter-spacing: 1.5px;
+  font-weight: 17px;
+  color: #098a09;
 }
-
+.inp::placeholder {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
 .inp:focus {
   outline: none;
-  border-bottom: 3px solid #009c00;
+  border-bottom: 4px solid #009c00;
+  padding-bottom: 3px;
 }
 .btn {
+  width: 100%;
   padding: 7px;
   background-color: #1e9e1e;
   border-radius: 5px;
