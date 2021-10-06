@@ -32,7 +32,7 @@ exports.assignNgo = async (req, res, next) => {
   try {
     let ngoId = req.body.random % ngoCount;
     let ng = ngo.find({ ngoId: ngoId });
-    let factory = Factory.find({ factoryId: req.body.factoryId });
+    let factory = await Factory.find({ factoryId: req.body.factoryId });
     factory.isAssigned = true;
     factory.date = new Date();
     factory.onDate = req.body.date;
