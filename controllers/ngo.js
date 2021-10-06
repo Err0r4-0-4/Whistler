@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 exports.register = async (req, res, next) => {
   try {
-    let ngoCount = await (await factory.find()).length;
+    let ngoCount = await (await ngo.find()).length;
     console.log(ngoCount);
     const email = req.body.email;
     const password = Math.random().toString(36).slice(-8);
