@@ -29,7 +29,14 @@ const NGO_Auth = () => {
     axios
       .post("https://whistler-backend.herokuapp.com/ngo/login", data)
       .then((res) => {
-        console.log(res);
+        console.log(res.data.ngoId);
+        localStorage.setItem("name", res.data.ngoId.name);
+        localStorage.setItem("ngoId", res.data.ngoId.ngoId);
+        localStorage.setItem("email", res.data.ngoId.email);
+        localStorage.setItem("date", res.data.ngoId.date);
+        localStorage.setItem("dateON", res.data.ngoId.dateOn);
+        localStorage.setItem("assigned", res.data.ngoId.assignedFactoryId);
+        localStorage.setItem("isAssigned", res.data.ngoId.isAssigned);
         setRedirect(true);
       })
       .catch((err) => {
@@ -65,7 +72,7 @@ const NGO_Auth = () => {
         <input
           type="text"
           placeholder="NGO Email"
-          onChange={(event) => setUserName(event.target.value)}
+          onChange={(event) => setEmail(event.target.value)}
           className={styles.inp}
         />
 
