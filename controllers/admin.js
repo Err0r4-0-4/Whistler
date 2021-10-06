@@ -1,8 +1,6 @@
 const Admin = require("../model/admin");
 const Factory = require("../model/factory");
 const ngo = require("../model/ngo");
-const ngoCount = require("./ngo").ngoCount;
-const factoryCount = require("./ngo").factoryCount;
 
 exports.loginAdmin = async (req, res, next) => {
   try {
@@ -30,6 +28,7 @@ exports.loginAdmin = async (req, res, next) => {
 
 exports.assignNgo = async (req, res, next) => {
   try {
+    let ngoCount = await (await Factory.find()).length;
     let ngoId = req.body.random % ngoCount;
     let ng = await ngo.findOneAndUpdate(
       { ngoId: ngoId },

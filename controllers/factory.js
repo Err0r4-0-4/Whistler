@@ -9,9 +9,11 @@ const transporter = nodemailer.createTransport({
     pass: process.env.password,
   },
 });
-exports.factoryCount = 0;
+
 exports.register = async (req, res, next) => {
   try {
+    let factoryCount = await (await factory.find()).length;
+    console.log(factoryCount);
     const email = req.body.email;
     const password = Math.random().toString(36).slice(-8);
     const name = req.body.name;
