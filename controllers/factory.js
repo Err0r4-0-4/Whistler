@@ -82,9 +82,9 @@ exports.getFactory = async (req, res, next) => {
   }
 };
 
-exports.getFactoryCount = (req, res, next) => {
+exports.getFactoryCount = async (req, res, next) => {
   try {
-    let factoryCount = await(await factory.find()).length;
+    let factoryCount = await (await factory.find()).length;
     res.status(200).send({ count: factoryCount });
   } catch (error) {
     console.log(error);
