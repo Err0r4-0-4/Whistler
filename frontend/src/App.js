@@ -7,7 +7,10 @@ import Factories from "./Components/Admin/Factories/Factories";
 import Add from "./Components/Admin/Add/Add";
 import Public from "./Components/SawoApis/public";
 import Ngo from "./Components/SawoApis/ngo";
+import Inspect from "./Components/NGO/Inspect/Inspect";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Assign from "./Components/Assign/Assign";
 
 function App() {
   return (
@@ -22,6 +25,8 @@ function App() {
           <Route path="/ngo/auth" exact component={NGO_Auth} />
           <Route path="/factory/auth" exact component={Factory_Auth}/>
           <Route path="/admin/add" exact component={Add} />
+          <Route path="/inspect" exact component={Inspect} />
+          <Route path="/assign" exact component={Assign} />
         </Switch>
       </div>
     </Router>
