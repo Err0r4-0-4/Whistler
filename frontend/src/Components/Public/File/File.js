@@ -20,7 +20,7 @@ const File = (props) => {
       );
       console.log(factories);
       let renderList = factories.data.message.map((factory) => (
-        <option key={factory.id} value={factory.factoryId}>
+        <option key={factory._id} value={factory.factoryId}>
           {factory.name}
         </option>
       ));
@@ -35,7 +35,9 @@ const File = (props) => {
   return (
     <div>
       <select onChange={dropdownHandler}>
-        <option disabled>-- select Factory --</option>
+        <option disabled selected value>
+          -- select Factory --
+        </option>
         {list}
       </select>
       <input
