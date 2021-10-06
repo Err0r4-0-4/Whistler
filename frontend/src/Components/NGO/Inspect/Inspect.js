@@ -24,12 +24,12 @@ const Inspect = (props) => {
 
         today = mm + '/' + dd + '/' + yyyy;
 
-      await Whistler.methods
-      .inspect(localStorage.getItem("assigned"), chemical, quantity,
-                    today, localStorage.getItem("name"), true, remarks, Inspector)
-      .send({
-        from: accounts[0],
-      });
+        await Whistler.methods
+        .inspect(localStorage.getItem("assigned"), chemical, quantity,
+                        today, localStorage.getItem("name"), true, remarks, Inspector)
+        .send({
+            from: accounts[0],
+        });
 
     }
 
