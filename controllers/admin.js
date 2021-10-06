@@ -29,7 +29,10 @@ exports.loginAdmin = async (req, res, next) => {
 exports.assignNgo = async (req, res, next) => {
   try {
     let ngoCount = await (await Factory.find()).length;
+    ngoCount = String(ngoCount);
+    ngoCount = 10 ** ngoCount.split("").length;
     let ngoId = req.body.random % ngoCount;
+    console.log(ngoId);
     let n = await ngo.find({ ngoId: ngoId });
     console.log(n);
     await ngo.findOneAndUpdate(
@@ -47,7 +50,7 @@ exports.assignNgo = async (req, res, next) => {
         isAssigned: true,
         date: new Date(),
         onDate: req.body.date,
-        ngoName: n.name,
+        ngoName: n[0].name,
       }
     );
     res.status(200).send({ message: "ok Done!" });
