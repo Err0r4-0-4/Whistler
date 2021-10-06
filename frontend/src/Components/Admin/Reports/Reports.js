@@ -15,17 +15,16 @@ const Reports = () => {
     const accounts = await web3.eth.getAccounts();
 
     try {
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0");
+      var yyyy = today.getFullYear();
 
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-        var yyyy = today.getFullYear();
+      today = mm + "/" + dd + "/" + yyyy;
 
-        today = mm + '/' + dd + '/' + yyyy;
+      setCount(today);
 
-        setCount(today);
-
-        let reportsArray = [];
+      let reportsArray = [];
 
       await axios
         .post("https://whistler-backend.herokuapp.com/factory/count")
@@ -88,20 +87,6 @@ const Reports = () => {
 
   const reportsList = (
     <div>
-<<<<<<< HEAD
-      {reports.map((report) => (
-
-        <Report
-            chemical={report.chemical_name}
-            date={report.date}
-            inspector={report.inspector}
-            ngo={report.ngo_name}
-            quantity={report.quantity}
-            remarks={report.remarks}
-            treated={report.treated}
-        />
-        
-=======
       <input type="search" onChange={searchHandler} />
       {reports1.map((report) => (
         <Report
@@ -113,7 +98,6 @@ const Reports = () => {
           remarks={report.remarks}
           treated={report.treated}
         />
->>>>>>> ce636e525c9603c23bc3406f69aff6cbe01c97d5
       ))}
     </div>
   );

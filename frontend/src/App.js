@@ -22,7 +22,6 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/help" exact component={Help} />
-
           <Route path="/public" exact component={Public} />
           <Route path="/ngo" exact component={Ngo} />
           <Route path="/admin/auth" exact component={Admin_Auth} />
