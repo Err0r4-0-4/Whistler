@@ -62,7 +62,7 @@ exports.loginFactory = async (req, res, next) => {
       expiresIn: "11h",
     });
 
-    res.status(200).send({ token: token, factId: fact.id });
+    res.status(200).send({ token: token, factId: fact });
     return;
   } catch (error) {
     console.log(error);

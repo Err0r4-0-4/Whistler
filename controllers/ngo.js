@@ -63,7 +63,7 @@ exports.loginNgo = async (req, res, next) => {
       expiresIn: "11h",
     });
 
-    res.status(200).send({ token: token, ngoId: ngo.id });
+    res.status(200).send({ token: token, ngoId: ngo });
     return;
   } catch (error) {
     console.log(error);
