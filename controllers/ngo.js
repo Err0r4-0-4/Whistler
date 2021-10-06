@@ -22,7 +22,7 @@ exports.register = async (req, res, next) => {
       email: email,
       password: password,
       name: name,
-      ngoId: ngoCount++,
+      ngoId: ngoCount + 1,
     });
     await ng.save();
     var mailOptions = {

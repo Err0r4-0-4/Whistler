@@ -21,7 +21,7 @@ exports.register = async (req, res, next) => {
       email: email,
       password: password,
       name: name,
-      factoryId: factoryCount++,
+      factoryId: factoryCount + 1,
     });
     await fact.save();
     var mailOptions = {
