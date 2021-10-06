@@ -3,7 +3,7 @@
   height: 100vh;
   background-color: #e7b62d;
   font-family: "Montserrat", sans-serif;
-  background-color: #bceed1;
+  background-color: #c4f0d6;
   z-index: 1;
   position: relative;
 }
@@ -149,7 +149,7 @@
   width: 95%;
   margin: 15px auto;
   padding: 5px 2.5%;
-  max-width: 335px;
+  max-width: 340px;
   outline: none;
   border: none;
   min-width: 320px;
@@ -178,16 +178,18 @@
 .btn {
   width: 100%;
   padding: 7px;
-  background-color: #1e9e1e;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  background-color: #08ac4c;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   margin-top: 30px;
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
+  max-width: 360px;
+  box-shadow: 1px 1px 5px rgb(83, 83, 83);
 }
 
 .btn:hover {
