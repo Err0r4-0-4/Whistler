@@ -31,7 +31,15 @@ exports.loginAdmin = async (req, res, next) => {
 exports.assignNgo = async (req, res, next) => {
   try {
     let ngoId = req.body.random % ngoCount;
-    let ng = ngo.find({ ngoId: ngoId });
+    let ng = await ngo.findOneAndUpdate(
+      { ngoId: ngoId },
+      {
+        assignedFactoryId: req.body.factoryId,
+        date: new Date(),
+        dateOn: req.body.date,
+        isAssigned: true,
+      }
+    );
     let factory = await Factory.findOneAndUpdate(
       { factoryId: req.body.factoryId },
       {

@@ -19,6 +19,22 @@ const ngoSchema = new schema({
     type: String,
     require: true,
   },
+  assignedFactoryId: {
+    type: String,
+    required: false,
+  },
+  date: {
+    type: Date,
+    required: false,
+  },
+  dateOn: {
+    type: Date,
+    required: false,
+  },
+  isAssigned: {
+    type: Boolean,
+    required: false,
+  },
 });
 
 module.exports = mongoose.model("ngo", ngoSchema);
