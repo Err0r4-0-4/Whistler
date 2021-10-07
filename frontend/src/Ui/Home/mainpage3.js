@@ -7,6 +7,7 @@ import { FaIndustry, FaComment, FaRegFileExcel } from "react-icons/fa";
 import { CgUserlane } from "react-icons/cg";
 import Headerngo from "../../Header/Headerngo";
 import Info from "./Info";
+
 const Mainpage3 = () => {
   const [small, setSmall] = useState(false);
   useEffect(() => {

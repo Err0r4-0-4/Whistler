@@ -15,7 +15,6 @@ import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
 import Spinner from "../../../Ui/Spinner/Spinner";
 
-
 const Admin_Auth = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -39,6 +38,8 @@ const Admin_Auth = () => {
         console.log(res);
         setRedirect(true);
         setLoading(false);
+        localStorage.setItem("permissions", "admin");
+        window.location.reload()
       })
       .catch((err) => {
         console.log(err);
@@ -70,7 +71,7 @@ const Admin_Auth = () => {
         </div>
       </div>
       <div className={styles.box}>
-        {redirect ? <Redirect to="/admin" /> : null}
+        {redirect ? <Redirect to="/admin/home" /> : null}
         <div className={styles.imgback}>
           <img src={img} className={styles.img} />
         </div>
@@ -83,7 +84,7 @@ const Admin_Auth = () => {
         />
 
         <input
-          type="text"
+          type="password"
           placeholder="Password"
           onChange={(event) => setPassword(event.target.value)}
           className={styles.inp}
