@@ -16,6 +16,7 @@ import Previous from "./Components/Public/Previous/Previos";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Mainpage from "./Ui/Home/Mainpage";
 import Mainpage2 from "./Ui/Home/Mainpage2";
+import Mainpage3 from "./Ui/Home/Mainpage3";
 
 import Assign from "./Components/Assign/Assign";
 import Notfound from "./Ui/Notfound/Notfound";
@@ -32,6 +33,7 @@ function App() {
 
           <Route path="/admin/factories" exact component={Factories} />
           <Route path="/ngo/home" exact component={Mainpage2} />
+          <Route path="/user/home" exact component={Mainpage3} />
 
           <Route path="/ngo/auth" exact component={NGO_Auth} />
           <Route path="/factory/auth" exact component={Factory_Auth} />
