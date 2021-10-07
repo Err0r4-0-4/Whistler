@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 import Headerngo from "../../../Header/Headerngo";
 import img from "../../Images/images.jpg";
 import img2 from "../../Images/user.png";
-
+import { Link } from "react-router-dom";
 import styles from "./Inspect.module.css";
 import Footer from "../../../Footer/Footer";
 const Inspect = (props) => {
@@ -134,7 +134,16 @@ const Inspect = (props) => {
       {localStorage.getItem("isAssigned") == "true" ? (
         form
       ) : (
-        <div> NO Assignment </div>
+        <div className={styles.nope}>
+          {" "}
+          <p className={styles.nopep}> No Assignment yet!!</p>
+          <p> Visit Old assignments</p>
+          <div className={styles.fifty}>
+            <div className={styles.select}>
+              <Link to="/">Previous </Link>
+            </div>
+          </div>
+        </div>
       )}
       <Footer />
     </div>

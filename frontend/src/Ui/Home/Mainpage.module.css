@@ -18,7 +18,7 @@
 .amountt,
 .amounta {
   margin-bottom: 10px;
-  background-color: #a70407;
+  background-color: #04a045;
   padding: 15px;
   text-align: center;
   font-weight: 300;
@@ -40,8 +40,8 @@
 .mainpage {
   height: 70vh;
   width: 100%;
-  background-image: linear-gradient(125deg, #204561d3 60%, #e510142d 71%),
-    url("../Image/donate.jpg");
+  background-image: linear-gradient(125deg, #033d1ccc 40%, #0d8b4294 71%),
+    url("../../Components/Images/images.jpg");
   /*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
@@ -71,10 +71,10 @@
 .typewriter {
   font-size: 32px;
   font-weight: 600;
-  color: #ee2528;
+  color: #69e69d;
 }
 .blue {
-  color: #ee2528;
+  color: #86f371;
 }
 .head p {
   max-width: 1140px;
@@ -89,12 +89,12 @@
 .fifty {
   width: 50%;
 }
-.but1,
-.but2 {
+.main .but1,
+.main .but2 {
   margin: 10px;
   display: inline-block;
   padding: 10px 30px;
-  border: 1px solid #680305;
+  border: 1px solid #04a045;
   border-radius: 100px;
   text-decoration: none;
   letter-spacing: 2px;
@@ -110,7 +110,7 @@
 
 .but1:link,
 .but1:visited {
-  background-color: #a70407;
+  background-color: #04a045;
   margin-right: 20px;
   color: white;
   font-weight: 500;
@@ -118,9 +118,9 @@
 
 .but1:hover,
 .but1:active {
-  background-color: white;
-  color: #a70407;
-  border: 1px solid #a70407;
+  background-color: rgb(233, 233, 233);
+  color: #05662d;
+  border: 1px solid #04a045;
   font-weight: 500;
   letter-spacing: 3px;
   box-shadow: 0 0 10px white;
@@ -135,9 +135,9 @@
 }
 .but2:hover,
 .but2:active {
-  background-color: white;
-  color: #a70407;
-  border: 1px solid #a70407;
+  background-color: rgb(233, 233, 233);
+  color: #017c34;
+  border: 1px solid #04a045;
   font-weight: 500;
   letter-spacing: 3px;
   box-shadow: 0 0 10px white;
@@ -158,9 +158,9 @@
   margin: auto;
   width: 100px;
   text-align: center;
-  background-color: #a70407;
+  background-color: #04a045;
   content: " ";
-  border: 1px solid #a70407;
+  border: 1px solid #04a045;
   margin-top: 20px;
 }
 .footwhite {
@@ -206,7 +206,8 @@
   box-shadow: 1px 1px 3px rgb(207, 207, 207);
   margin: 10px 10px;
   color: rgb(0, 0, 0);
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  margin-top: 10px;
 }
 .box p {
   text-align: right;
@@ -223,15 +224,16 @@
   font-size: 14px;
   padding: 5px;
   margin-top: 20px;
+  position: relative;
 }
 .iconbox1 {
   position: absolute;
-  height: 90px;
-  width: 90px;
-  top: -30px;
+  height: 40px;
+  width: 40px;
+  top: -35px;
   left: 15px;
   background: linear-gradient(60deg, #ffa726, #fb8c00);
-  padding: 25px;
+  padding: 30px;
   box-shadow: 1px 1px 10px rgb(189, 189, 189);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -241,11 +243,11 @@
 }
 .iconbox2 {
   position: absolute;
-  height: 90px;
-  width: 90px;
-  top: -30px;
+  height: 40px;
+  width: 40px;
+  top: -35px;
   left: 15px;
-  padding: 25px;
+  padding: 30px;
   box-shadow: 1px 1px 10px rgb(189, 189, 189);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -256,12 +258,11 @@
 }
 .iconbox3 {
   position: absolute;
-  height: 90px;
-  width: 90px;
-  top: -30px;
+  height: 40px;
+  width: 40px;
+  top: -35px;
   left: 15px;
-  background: linear-gradient(60deg, #ffa726, #fb8c00);
-  padding: 25px;
+  padding: 30px;
   box-shadow: 1px 1px 10px rgb(189, 189, 189);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -272,12 +273,11 @@
 }
 .iconbox4 {
   position: absolute;
-  height: 90px;
-  width: 90px;
-  top: -30px;
+  height: 40px;
+  width: 40px;
+  top: -35px;
   left: 15px;
-  background: linear-gradient(60deg, #66bb6a, #43a047);
-  padding: 25px;
+  padding: 30px;
   box-shadow: 1px 1px 10px rgb(189, 189, 189);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -373,8 +373,8 @@
 }
 @media screen and (max-width: 600px) {
   .mainpage {
-    background-image: linear-gradient(125deg, #204561d3 60%, #0300008a 65%),
-      url("../Image/donate.jpg");
+    background-image: linear-gradient(125deg, #033d1ccc 40%, #0d8b4294 71%),
+      url("../../Components/Images/images.jpg");
     /* height: 80vh;*/
   }
   .footwhite {
@@ -389,28 +389,30 @@
     font-size: 24px;
     letter-spacing: 1px;
     margin: 30px 5px;
-    text-align: center;
+    padding-left: 10px;
   }
   .typewriter {
-    font-size: 22px;
+    font-size: 26px;
+    letter-spacing: 2px;
   }
   .but1,
   .but2 {
+    width: 80%;
     font-weight: 400;
     font-size: 14px;
     margin: 30px 20px;
     letter-spacing: 1px;
   }
   .fifty {
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
 }
 
 @media screen and (max-width: 500px) {
   .mainpage {
-    background-image: linear-gradient(125deg, #204561d3 60%, #0300008a 65%),
-      url("../Image/donate.jpg");
+    background-image: linear-gradient(125deg, #033d1ccc 40%, #0d8b4294 71%),
+      url("../../Components/Images/images.jpg");
   }
   .head {
     padding-left: 3px;
@@ -420,10 +422,10 @@
     font-size: 22px;
     letter-spacing: 0px;
     margin: 30px 5px;
-    text-align: center;
   }
   .typewriter {
-    font-size: 20px;
+    letter-spacing: 2px;
+    font-size: 28px;
   }
   .but1,
   .but2 {
@@ -449,6 +451,7 @@
     text-align: center;
   }
   .typewriter {
+    letter-spacing: 2px;
     font-size: 20px;
   }
 }
