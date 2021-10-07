@@ -1,13 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useState } from "react";
 import SawoLogin from 'sawo-react'
+import { Redirect } from "react-router-dom";
 
 const LoginPage = () => {
+
+    const [redirect, setRedirect] = useState("");
 
     function sawoLoginCallback(payload) {
         console.log(payload.identifier);
         localStorage.setItem("phone", payload.identifier);
         localStorage.setItem("permissions", "public");
-        window.location.reload()
+        window.location.reload();
+        setRedirect(true);
+        console.log("....");
     }
     
     const sawoConfig = {
@@ -19,6 +24,7 @@ const LoginPage = () => {
 
     return (
         <div>
+            {redirect ? <Redirect to="/user/home" /> : null}
             <SawoLogin config={sawoConfig}/>
         </div>
     )
