@@ -4,7 +4,8 @@ import SawoLogin from 'sawo-react'
 const LoginPage = () => {
 
     function sawoLoginCallback(payload) {
-        console.log(payload)
+        console.log(payload.identifier);
+        localStorage.setItem("phone", payload.identifier);
     }
     
     const sawoConfig = {

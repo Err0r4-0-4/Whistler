@@ -14,6 +14,7 @@ const Factories = () => {
   const [assigning, setAssigning] = useState(false);
   const [redirect, setRedirect] = useState("");
   const [loading, setLoading] = useState(false);
+  const [id, setId] = useState(false);
 
   useEffect(async () => {
     console.log("sss");
@@ -44,8 +45,9 @@ const Factories = () => {
     setAssigning(false);
   };
 
-  const onAssignHandler = () => {
-    console.log("clicked");
+  const onAssignHandler = (props) => {
+    console.log(props);
+    setId(props);
     setAssigning(true);
   };
 
@@ -71,7 +73,7 @@ const Factories = () => {
       <Header />
 
       <Modal show={assigning} close={assignCancelHandler}>
-        <Assign />
+        <Assign factoryId={id} />
       </Modal>
 
       <div className={styles.box}>

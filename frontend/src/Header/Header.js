@@ -7,6 +7,7 @@ import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
+
 const Header = () => {
   const [open, setOpen] = useState(false);
   const clickhandler = () => {
@@ -14,14 +15,21 @@ const Header = () => {
   };
 
   const [over, setover] = useState(false);
+
   const func1 = () => {
     setover(!over);
   };
+
   const location = useLocation();
   let loc = false;
   if (location.pathname !== "/home") {
     loc = true;
   }
+
+  const logoutHandler = () => {
+    localStorage.clear();
+  }
+
   return (
     <div>
       <div className={loc ? styles.bold : styles.header}>
@@ -61,7 +69,7 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <NavLink to="/" className={styles.right}>
+        <NavLink to="/" className={styles.right} onClick={logoutHandler}>
           <div>LogOut</div>
         </NavLink>
 
