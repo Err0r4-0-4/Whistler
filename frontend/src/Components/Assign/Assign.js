@@ -3,6 +3,8 @@ import axios from "axios";
 import web3 from "../../ethereum/web3";
 import { Redirect } from "react-router-dom";
 import Random from "../../ethereum/random";
+import Spinner from "../../Ui/Spinner/Spinner";
+
 const Assign = (props) => {
 
   const [date, setDate] = useState([]);
@@ -50,7 +52,9 @@ const Assign = (props) => {
   };
 
   return (
+
     <div>
+      <Spinner/>
       {random}
       <input
         type="text"
@@ -60,6 +64,7 @@ const Assign = (props) => {
 
       <button onClick={onAssignHandler}>Assign</button>
     </div>
+
   );
 };
 
