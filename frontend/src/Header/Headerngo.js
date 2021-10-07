@@ -29,35 +29,18 @@ const Headerngo = () => {
           {/* <img src={img} alt="Logo" className={styles.flash} /> */}
 
           <h2 className={styles.name}>
-            <NavLink to="/home">Whistler!</NavLink>
+            <NavLink to="/nog/home">Whistler!</NavLink>
           </h2>
         </div>
         <ul className={styles.flex}>
           <li>
-            <NavLink to="/home" activeClassName={styles.active}>
+            <NavLink to="/ngo/home" activeClassName={styles.active}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/admin/add" activeClassName={styles.active}>
-              Add
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/projects" activeClassName={styles.active}>
-              Reports
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/admin/factories" activeClassName={styles.active}>
-              Assign
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/skills" activeClassName={styles.active}>
-              Complaints
+            <NavLink to="/ngo/inspect" activeClassName={styles.active}>
+              Inspect
             </NavLink>
           </li>
         </ul>

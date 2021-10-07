@@ -29,39 +29,27 @@ const HeaderUser = () => {
           {/* <img src={img} alt="Logo" className={styles.flash} /> */}
 
           <h2 className={styles.name}>
-            <NavLink to="/home">Whistler!</NavLink>
+            <NavLink to="/user/home">Whistler!</NavLink>
           </h2>
         </div>
         <ul className={styles.flex}>
           <li>
-            <NavLink to="/home" activeClassName={styles.active}>
+            <NavLink to="/user/home" activeClassName={styles.active}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/admin/add" activeClassName={styles.active}>
-              Add
+            <NavLink to="/user/new" activeClassName={styles.active}>
+              New Complaints
             </NavLink>
           </li>
           <li>
-            <NavLink to="/projects" activeClassName={styles.active}>
-              Reports
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/admin/factories" activeClassName={styles.active}>
-              Assign
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/skills" activeClassName={styles.active}>
-              Complaints
+            <NavLink to="/user/previous" activeClassName={styles.active}>
+              Previous
             </NavLink>
           </li>
         </ul>
-        <NavLink to="/contact" className={styles.right}>
+        <NavLink to="/" className={styles.right}>
           <div>LogOut</div>
         </NavLink>
 

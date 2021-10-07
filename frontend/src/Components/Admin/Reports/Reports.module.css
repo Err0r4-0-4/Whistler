@@ -1,7 +1,7 @@
 .pages {
   background-color: #d8f5d8;
   padding: 130px 0 0;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .box {
@@ -13,7 +13,7 @@
   min-width: 1070px;
   position: relative;
   background-color: rgb(235, 235, 235);
-
+  min-height: 300px;
   padding-bottom: 20px;
 }
 .bar {

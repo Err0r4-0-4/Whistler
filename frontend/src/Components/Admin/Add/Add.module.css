@@ -1,7 +1,7 @@
 .page {
   background-color: #d8f5d8;
   padding: 130px 0 0;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .box {

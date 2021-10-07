@@ -29,12 +29,12 @@ const Header = () => {
           {/* <img src={img} alt="Logo" className={styles.flash} /> */}
 
           <h2 className={styles.name}>
-            <NavLink to="/home">Whistler!</NavLink>
+            <NavLink to="/admin/home">Whistler!</NavLink>
           </h2>
         </div>
         <ul className={styles.flex}>
           <li>
-            <NavLink to="/home" activeClassName={styles.active}>
+            <NavLink to="admin/home" activeClassName={styles.active}>
               Home
             </NavLink>
           </li>
@@ -44,7 +44,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/projects" activeClassName={styles.active}>
+            <NavLink to="/admin/reports" activeClassName={styles.active}>
               Reports
             </NavLink>
           </li>
@@ -56,12 +56,12 @@ const Header = () => {
           </li>
 
           <li>
-            <NavLink to="/skills" activeClassName={styles.active}>
+            <NavLink to="/admin/complaints" activeClassName={styles.active}>
               Complaints
             </NavLink>
           </li>
         </ul>
-        <NavLink to="/contact" className={styles.right}>
+        <NavLink to="/" className={styles.right}>
           <div>LogOut</div>
         </NavLink>
 
