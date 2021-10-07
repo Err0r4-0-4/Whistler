@@ -3,7 +3,7 @@ import axios from "axios";
 import web3 from "../../../ethereum/web3";
 import Whistler from "../../../ethereum/whistler";
 import { Redirect } from "react-router-dom";
-import Header from "../../../Header/Header";
+import Headerngo from "../../../Header/HeaderUser";
 import Footer from "../../../Footer/Footer";
 import styles from "./File.module.css";
 import img from "../../Images/user.png";
@@ -88,7 +88,7 @@ const File = (props) => {
 
   return (
     <div className={styles.file}>
-      <Header />
+      <Headerngo />
 
       {loading ? <Spinner/> : null}
 
