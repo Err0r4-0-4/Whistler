@@ -14,13 +14,10 @@ const Assign = (props) => {
 
   // }, []);
 
-<<<<<<< HEAD
     setLoading(true);
 
-=======
   const onAssignHandler = async () => {
     console.log("randomNumber");
->>>>>>> a586a345189c90c4beff0ad5bbd3460c1cbe3064
     const accounts = await web3.eth.getAccounts();
     console.log(Random.methods);
     console.log(Random.events);
