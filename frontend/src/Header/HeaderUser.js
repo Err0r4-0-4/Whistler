@@ -25,7 +25,7 @@ const HeaderUser = () => {
 
   const logoutHandler = () => {
     localStorage.clear();
-  }
+  };
 
   return (
     <div>
@@ -75,7 +75,7 @@ const HeaderUser = () => {
           <ul className={styles.flex2}>
             <li>
               <NavLink
-                to="/home"
+                to="/user/home"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
@@ -84,38 +84,34 @@ const HeaderUser = () => {
             </li>
             <li>
               <NavLink
-                to="/experience"
+                to="/user/file"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                <span className={styles.yellow}>MY</span> Experience
+                New Complaint
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/projects"
+                to="/user/previous"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                <span className={styles.yellow}>MY</span>Projects
+                Previous
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/skills"
+                to="/help"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                <span className={styles.yellow}>MY</span>Skills
+                Help
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/contact"
-                activeClassName={styles.active2}
-                onClick={clickhandler}
-              >
-                Contact <span className={styles.yellow}>ME</span>
+              <NavLink to="/" onClick={clickhandler}>
+                Signout
               </NavLink>
             </li>
           </ul>
