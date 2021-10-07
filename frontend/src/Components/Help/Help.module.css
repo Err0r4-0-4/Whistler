@@ -1,7 +1,7 @@
 .page {
   background-color: #d8f5d8;
   z-index: 10;
-  padding-top: 60px;
+  padding-top: 80px;
   padding-bottom: 30px;
   z-index: 1;
   position: relative;
@@ -256,7 +256,6 @@
 
 .select a {
   box-shadow: 1px 1px 10px rgb(156, 156, 156);
-
   text-align: center;
   display: block;
   text-decoration: none;
