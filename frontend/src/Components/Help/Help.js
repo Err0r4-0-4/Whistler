@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./Help.module.css";
 import { AiOutlineDown } from "react-icons/ai";
 import ParticlesBg from "particles-bg";
+import { Link, useLocation } from "react-router-dom";
+
 const Help = () => {
   const [prob, setprob] = useState(false);
   const probf = () => {
@@ -29,8 +31,18 @@ const Help = () => {
   const open2 = () => {
     sethelp2(!help2);
   };
+
+  const [help3, sethelp3] = useState(false);
+  const open3 = () => {
+    sethelp3(!help3);
+  };
   return (
     <div className={styles.page}>
+      <div className={styles.fifty}>
+        <div className={styles.select}>
+          <Link to="/">Login</Link>
+        </div>
+      </div>
       <div className={styles.big}>
         <div className={styles.small} onClick={probf}>
           <div className={styles.heading}>Problem</div>
@@ -126,12 +138,12 @@ const Help = () => {
           </div>
         </div>
 
-        <div className={styles.help} onClick={open2}>
+        <div className={styles.help} onClick={open3}>
           <div className={styles.faqques}>How should I register ? </div>
-          <div className={help2 ? styles.up : styles.add}>
+          <div className={help3 ? styles.up : styles.add}>
             <AiOutlineDown />
           </div>
-          <div className={help2 ? styles.open : styles.close}>
+          <div className={help3 ? styles.open : styles.close}>
             One person can register using portal available at your nearest
             hospital which is enrolled in this scheme.
           </div>
