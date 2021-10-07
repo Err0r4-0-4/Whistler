@@ -5,7 +5,7 @@ import styles from "./Mainpage.module.css";
 import { BiRegistered } from "react-icons/bi";
 import { FaIndustry, FaComment, FaRegFileExcel } from "react-icons/fa";
 import { CgUserlane } from "react-icons/cg";
-import Headerngo from "../../Header/Headerngo";
+import HeaderUser from "../../Header/HeaderUser";
 import Info from "./Info";
 
 const Mainpage3 = () => {
@@ -27,7 +27,7 @@ const Mainpage3 = () => {
 
   return (
     <div className={styles.main}>
-      <Headerngo />
+      <HeaderUser />
 
       <div className={styles.mainpage}>
         <div className={styles.head}>
