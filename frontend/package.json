@@ -21,7 +21,7 @@
     "react-simple-typewriter": "^3.0.1",
     "redux": "^4.1.1",
     "sawo-react": "^1.0.6",
-    "solc": "^0.4.7",
+    "solc": "^0.8.7",
     "styled-components": "^5.3.1",
     "truffle-hdwallet-provider": "^1.0.17",
     "typewriter-effect": "^2.18.0",
