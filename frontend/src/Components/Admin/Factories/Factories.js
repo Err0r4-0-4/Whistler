@@ -16,7 +16,7 @@ const Factories = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(async () => {
-
+    console.log("sss");
     setLoading(true);
 
     try {
@@ -36,18 +36,18 @@ const Factories = () => {
     } catch (e) {
       console.log(e);
       window.alert(e);
-          setLoading(false);
+      setLoading(false);
     }
   }, []);
 
   const assignCancelHandler = () => {
     setAssigning(false);
-  }
+  };
 
   const onAssignHandler = () => {
     console.log("clicked");
     setAssigning(true);
-  }
+  };
 
   const factoriesList = (
     <div className={styles.flex}>
@@ -64,15 +64,14 @@ const Factories = () => {
 
   return (
     <div className={styles.pages}>
-
       {/* <Spinner/> */}
 
-      {loading ? <Spinner/> : null}
+      {loading ? <Spinner /> : null}
 
       <Header />
 
       <Modal show={assigning} close={assignCancelHandler}>
-          <Assign/>
+        <Assign />
       </Modal>
 
       <div className={styles.box}>
