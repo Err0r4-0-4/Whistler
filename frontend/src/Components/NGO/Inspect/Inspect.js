@@ -8,12 +8,9 @@ import img from "../../Images/images.jpg";
 import img2 from "../../Images/user.png";
 import { Link } from "react-router-dom";
 import styles from "./Inspect.module.css";
-<<<<<<< HEAD
 import Footer from "../../../Footer/Footer";
-=======
 import Spinner from "../../../Ui/Spinner/Spinner";
 
->>>>>>> 2ce54789e6f45c96be862de7cf4eb54052fd8090
 const Inspect = (props) => {
   const [show, setshow] = useState(false);
   const func1 = () => {
@@ -26,7 +23,6 @@ const Inspect = (props) => {
   const [loading, setLoading] = useState(false);
 
   const onInspectHandler = async () => {
-
     setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
@@ -40,26 +36,25 @@ const Inspect = (props) => {
 
     today = mm + "/" + dd + "/" + yyyy;
 
-    try{
+    try {
       await Whistler.methods
-      .inspect(
-        localStorage.getItem("assigned"),
-        chemical,
-        quantity,
-        today,
-        localStorage.getItem("name"),
-        true,
-        remarks,
-        Inspector
-      )
-      .send({
-        from: accounts[0],
-      });
-    }catch(e) {
+        .inspect(
+          localStorage.getItem("assigned"),
+          chemical,
+          quantity,
+          today,
+          localStorage.getItem("name"),
+          true,
+          remarks,
+          Inspector
+        )
+        .send({
+          from: accounts[0],
+        });
+    } catch (e) {
       window.alert(e);
       setLoading(false);
     }
-   
   };
 
   let form = (
@@ -145,7 +140,7 @@ const Inspect = (props) => {
     <div className={styles.page}>
       <Headerngo />
 
-      {loading ? <Spinner/> : null}
+      {loading ? <Spinner /> : null}
 
       {console.log(localStorage.getItem("isAssigned"))}
 
