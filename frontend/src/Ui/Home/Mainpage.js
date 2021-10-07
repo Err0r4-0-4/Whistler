@@ -42,11 +42,11 @@ const Mainpage = () => {
             Be <span className={styles.typewriter}>A Whistler!</span>
           </h1>
           <div className={styles.fifty}>
-            <Link to="Help" className={styles.but1}>
+            <Link to="/help" className={styles.but1}>
               Know More...
             </Link>
-            <Link to="Help" className={styles.but2}>
-              New Donor
+            <Link to="/admin/add" className={styles.but2}>
+              Add Institutions
             </Link>
           </div>
         </div>
