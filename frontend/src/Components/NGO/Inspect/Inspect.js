@@ -3,7 +3,9 @@ import axios from "axios";
 import web3 from "../../../ethereum/web3";
 import Whistler from "../../../ethereum/whistler";
 import { Redirect } from "react-router-dom";
-
+import Headerngo from "../../../Header/Headerngo";
+import img from "../../Images/user2.png";
+import styles from "./Inspect.module.css";
 const Inspect = (props) => {
   const [chemical, setChemical] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -39,7 +41,42 @@ const Inspect = (props) => {
   };
 
   let form = (
-    <div>
+    <div className={styles.box}>
+      <div className={styles.tileup}>
+        <div className={styles.bar}>{localStorage.getItem("name")}</div>
+
+        <div className={styles.tile}>
+          <img src={img} alt="user" className={styles.user} />
+
+          <div className={styles.inner}>
+            <div className={styles.one}>
+              <p>Assigned Factory ID:</p>
+              <div className={styles.date}>
+                <div>{localStorage.getItem("Assigned Factory Id")}</div>
+              </div>
+            </div>
+            <div className={styles.one}>
+              <p>Assigned Factory Name:</p>
+              <div className={styles.aadhar}>
+                <div>TISCO</div>
+              </div>
+            </div>
+            <div className={styles.one}>
+              <p>Assigned On: </p>
+              <div className={styles.group}>
+                {localStorage.getItem("dateON")}
+              </div>
+            </div>
+            <div className={styles.one}>
+              <p>Inspection Date: </p>
+              <div className={styles.group}>{localStorage.getItem("date")}</div>
+            </div>
+            <div onClick={props.assign} className={styles.btn}>
+              SCHEDULE
+            </div>
+          </div>
+        </div>
+      </div>
       <div>{localStorage.getItem("name")}</div>
 
       <div>
@@ -80,7 +117,8 @@ const Inspect = (props) => {
   );
 
   return (
-    <div>
+    <div className={styles.page}>
+      <Headerngo />
       {console.log(localStorage.getItem("isAssigned"))}
 
       {localStorage.getItem("isAssigned") == "true" ? (

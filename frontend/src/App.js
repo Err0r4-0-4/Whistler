@@ -23,18 +23,18 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/help" exact component={Help} />
-          <Route path="/public" exact component={Public} />
-          <Route path="/ngo" exact component={Ngo} />
+          <Route path="/public/auth" exact component={Public} />
+          <Route path="/ngo/auth" exact component={Ngo} />
           <Route path="/admin/auth" exact component={Admin_Auth} />
           <Route path="/admin/factories" exact component={Factories} />
           <Route path="/ngo/auth" exact component={NGO_Auth} />
           <Route path="/factory/auth" exact component={Factory_Auth} />
           <Route path="/admin/add" exact component={Add} />
-          <Route path="/inspect" exact component={Inspect} />
-          <Route path="/assign" exact component={Assign} />
+          <Route path="/ngo/inspect" exact component={Inspect} />
+          <Route path="/admin/assign" exact component={Assign} />
           <Route path="/admin/reports" exact component={Reports} />
-          <Route path="/file" exact component={File} />
-          <Route path="/compalins" exact component={Complains} />
+          <Route path="/user/file" exact component={File} />
+          <Route path="/admin/complaints" exact component={Complains} />
           <Route path="/*" component={Notfound} />
         </Switch>
       </div>
