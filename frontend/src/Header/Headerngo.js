@@ -43,6 +43,11 @@ const Headerngo = () => {
               Inspect
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/help" activeClassName={styles.active}>
+              Help
+            </NavLink>
+          </li>
         </ul>
         <NavLink to="/contact" className={styles.right}>
           <div>LogOut</div>

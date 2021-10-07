@@ -48,6 +48,11 @@ const HeaderUser = () => {
               Previous
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/help" activeClassName={styles.active}>
+              Help
+            </NavLink>
+          </li>
         </ul>
         <NavLink to="/" className={styles.right}>
           <div>LogOut</div>
