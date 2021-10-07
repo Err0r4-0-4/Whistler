@@ -6,6 +6,7 @@ import styles from "./Factories.module.css";
 import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
 import Modal from "../../../Ui/Modal/Modal";
+import Assign from "../../Assign/Assign";
 
 const Factories = () => {
   const [factories, setFactories] = useState([]);
@@ -56,8 +57,8 @@ const Factories = () => {
       <Header />
 
       <Modal show={assigning} close={assignCancelHandler}>
-                 
-                </Modal>
+          <Assign/>
+      </Modal>
 
       <div className={styles.box}>
         <div className={styles.bar}>

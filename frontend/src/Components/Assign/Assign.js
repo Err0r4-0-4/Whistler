@@ -4,9 +4,16 @@ import web3 from "../../ethereum/web3";
 import { Redirect } from "react-router-dom";
 import Random from "../../ethereum/random";
 const Assign = (props) => {
-  const [date, setDate] = useState([]);
 
-  useEffect(async () => {
+  const [date, setDate] = useState([]);
+  const [random, setRandom] = useState([]);
+
+  // useEffect(async () => {
+    
+  // }, []);
+
+  const onAssignHandler = async() => {
+
     console.log("randomNumber");
     const accounts = await web3.eth.getAccounts();
     console.log(Random.methods);
@@ -16,12 +23,13 @@ const Assign = (props) => {
     });
     console.log(randomNumber);
     setTimeout(async () => {
-      let random = await Random.methods.randomResult().call();
+      let rand = await Random.methods.randomResult().call();
+      setRandom(rand);
       console.log(random);
-    }, 60000);
-  }, []);
+    }, 40000);
 
-  const onAssignHandler = () => {
+    //////////////////////////////////////////////
+
     const data = {
       date: date,
       random: 1,
@@ -43,6 +51,7 @@ const Assign = (props) => {
 
   return (
     <div>
+      {random}
       <input
         type="text"
         placeholder="date"
