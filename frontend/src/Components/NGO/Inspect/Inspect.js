@@ -4,11 +4,18 @@ import web3 from "../../../ethereum/web3";
 import Whistler from "../../../ethereum/whistler";
 import { Redirect } from "react-router-dom";
 import Headerngo from "../../../Header/Headerngo";
-import img from "../../Images/user2.png";
+import img from "../../Images/images.jpg";
+import img2 from "../../Images/user.png";
+import { Link } from "react-router-dom";
 import styles from "./Inspect.module.css";
+import Footer from "../../../Footer/Footer";
 import Spinner from "../../../Ui/Spinner/Spinner";
 
 const Inspect = (props) => {
+  const [show, setshow] = useState(false);
+  const func1 = () => {
+    setshow(true);
+  };
   const [chemical, setChemical] = useState("");
   const [quantity, setQuantity] = useState("");
   const [remarks, setRemarks] = useState([]);
@@ -16,7 +23,6 @@ const Inspect = (props) => {
   const [loading, setLoading] = useState(false);
 
   const onInspectHandler = async () => {
-
     setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
@@ -30,35 +36,34 @@ const Inspect = (props) => {
 
     today = mm + "/" + dd + "/" + yyyy;
 
-    try{
+    try {
       await Whistler.methods
-      .inspect(
-        localStorage.getItem("assigned"),
-        chemical,
-        quantity,
-        today,
-        localStorage.getItem("name"),
-        true,
-        remarks,
-        Inspector
-      )
-      .send({
-        from: accounts[0],
-      });
-    }catch(e) {
+        .inspect(
+          localStorage.getItem("assigned"),
+          chemical,
+          quantity,
+          today,
+          localStorage.getItem("name"),
+          true,
+          remarks,
+          Inspector
+        )
+        .send({
+          from: accounts[0],
+        });
+    } catch (e) {
       window.alert(e);
       setLoading(false);
     }
-   
   };
 
   let form = (
-    <div className={styles.box}>
+    <div>
       <div className={styles.tileup}>
         <div className={styles.bar}>{localStorage.getItem("name")}</div>
 
         <div className={styles.tile}>
-          <img src={img} alt="user" className={styles.user} />
+          <div className={styles.user}></div>
 
           <div className={styles.inner}>
             <div className={styles.one}>
@@ -83,48 +88,51 @@ const Inspect = (props) => {
               <p>Inspection Date: </p>
               <div className={styles.group}>{localStorage.getItem("date")}</div>
             </div>
-            <div onClick={props.assign} className={styles.btn}>
-              SCHEDULE
-            </div>
+            {!show && (
+              <div onClick={func1} className={styles.btn}>
+                Inspect
+              </div>
+            )}
           </div>
         </div>
       </div>
-      <div>{localStorage.getItem("name")}</div>
+      <div className={show ? styles.box : styles.hid}>
+        <div className={styles.imgback}>
+          <img src={img2} className={styles.img} />
+        </div>
+        <div className={styles.tag}>Inspection Report</div>
 
-      <div>
-        Assigned Factory ID: {localStorage.getItem("Assigned Factory Id")}
+        <input
+          type="text"
+          placeholder="chemical name"
+          className={styles.inp}
+          onChange={(event) => setChemical(event.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="quantity"
+          className={styles.inp}
+          onChange={(event) => setQuantity(event.target.value)}
+        />
+
+        <textarea
+          placeholder="remarks"
+          onChange={(event) => setRemarks(event.target.value)}
+          className={styles.txt}
+        ></textarea>
+
+        <input
+          type="text"
+          placeholder="Inspector Name"
+          onChange={(event) => setInspector(event.target.value)}
+          className={styles.inp}
+        />
+        <button className={styles.btn2}>UPLOAD</button>
+
+        <button onClick={onInspectHandler} className={styles.btn2}>
+          SUBMIT
+        </button>
       </div>
-
-      <div>Assigned Factory Name: TISCO</div>
-
-      <div>Assigned On: {localStorage.getItem("dateON")}</div>
-
-      <div>Inspection Date: {localStorage.getItem("date")}</div>
-
-      <input
-        type="text"
-        placeholder="chemical name"
-        onChange={(event) => setChemical(event.target.value)}
-      />
-
-      <input
-        type="text"
-        placeholder="quantity"
-        onChange={(event) => setQuantity(event.target.value)}
-      />
-
-      <textarea
-        placeholder="remarks"
-        onChange={(event) => setRemarks(event.target.value)}
-      ></textarea>
-
-      <input
-        type="text"
-        placeholder="Inspector Name"
-        onChange={(event) => setInspector(event.target.value)}
-      />
-
-      <button onClick={onInspectHandler}>SUBMIT</button>
     </div>
   );
 
@@ -132,15 +140,25 @@ const Inspect = (props) => {
     <div className={styles.page}>
       <Headerngo />
 
-      {loading ? <Spinner/> : null}
+      {loading ? <Spinner /> : null}
 
       {console.log(localStorage.getItem("isAssigned"))}
 
       {localStorage.getItem("isAssigned") == "true" ? (
         form
       ) : (
-        <div> NO Assignment </div>
+        <div className={styles.nope}>
+          {" "}
+          <p className={styles.nopep}> No Assignment yet!!</p>
+          <p> Visit Old assignments</p>
+          <div className={styles.fifty}>
+            <div className={styles.select}>
+              <Link to="/">Previous </Link>
+            </div>
+          </div>
+        </div>
       )}
+      <Footer />
     </div>
   );
 };

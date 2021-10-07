@@ -42,7 +42,7 @@ const Header = () => {
         </div>
         <ul className={styles.flex}>
           <li>
-            <NavLink to="admin/home" activeClassName={styles.active}>
+            <NavLink to="/admin/home" activeClassName={styles.active}>
               Home
             </NavLink>
           </li>
@@ -85,47 +85,52 @@ const Header = () => {
           <ul className={styles.flex2}>
             <li>
               <NavLink
-                to="/home"
+                to="/admin/home"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                ho<span className={styles.yellow}>ME</span>
+                Home
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/experience"
+                to="/admin/add"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                <span className={styles.yellow}>MY</span> Experience
+                Add
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/projects"
+                to="/admin/reports"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                <span className={styles.yellow}>MY</span>Projects
+                Reports
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/skills"
+                to="/admin/factories"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                <span className={styles.yellow}>MY</span>Skills
+                Assign
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/contact"
+                to="/admin/complaints"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                Contact <span className={styles.yellow}>ME</span>
+                Complaints
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/" onClick={clickhandler}>
+                Logout
               </NavLink>
             </li>
           </ul>

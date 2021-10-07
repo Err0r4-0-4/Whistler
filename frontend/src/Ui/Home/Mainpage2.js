@@ -5,9 +5,9 @@ import styles from "./Mainpage.module.css";
 import { BiRegistered } from "react-icons/bi";
 import { FaIndustry, FaComment, FaRegFileExcel } from "react-icons/fa";
 import { CgUserlane } from "react-icons/cg";
-import Header from "../../Header/Header";
+import Headerngo from "../../Header/Headerngo";
 import Info from "./Info";
-const Mainpage = () => {
+const Mainpage2 = () => {
   const [small, setSmall] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -26,7 +26,7 @@ const Mainpage = () => {
 
   return (
     <div className={styles.main}>
-      <Header />
+      <Headerngo />
 
       <div className={styles.mainpage}>
         <div className={styles.head}>
@@ -118,4 +118,4 @@ const Mainpage = () => {
   );
 };
 
-export default Mainpage;
+export default Mainpage2;
