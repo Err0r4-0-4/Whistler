@@ -31,7 +31,7 @@ const Factory = (props) => {
           <div className={styles.group}>{props.email}</div>
         </div>
 
-        <div onClick={onScheduleHandler} className={styles.btn}>
+        <div onClick={props.assign} className={styles.btn}>
           SCHEDULE
         </div>
       </div>
