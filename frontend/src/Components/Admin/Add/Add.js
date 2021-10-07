@@ -14,8 +14,12 @@ import { GoMarkGithub, GoMail } from "react-icons/go";
 import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
+import Spinner from "../../../Ui/Spinner/Spinner";
+
 const Add = () => {
   const [open1, setopen1] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const fun1 = () => {
     setopen1(!open1);
   };
@@ -38,14 +42,17 @@ const Add = () => {
 
     console.log(data);
 
+    setLoading(true);
+
     axios
       .post("https://whistler-backend.herokuapp.com/factory/register", data)
       .then((res) => {
         console.log(res);
-        //  setRedirect(true);
+        setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        window.alert(err);
+        setLoading(false);
       });
   };
 
@@ -57,20 +64,25 @@ const Add = () => {
 
     console.log(data);
 
+    setLoading(true);
+
     axios
       .post("https://whistler-backend.herokuapp.com/ngo/register", data)
       .then((res) => {
         console.log(res);
-        //  setRedirect(true);
+        setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        window.alert(err);
+        setLoading(false);
       });
   };
 
   return (
     <div className={styles.page}>
       <Header />
+
+      {loading ? <Spinner/> : null}
 
       <div className={styles.add1}>
         <div className={styles.open1} onClick={fun1}>

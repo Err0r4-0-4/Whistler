@@ -9,6 +9,7 @@ const Assign = (props) => {
 
   const [date, setDate] = useState([]);
   const [random, setRandom] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // useEffect(async () => {
     
@@ -16,7 +17,8 @@ const Assign = (props) => {
 
   const onAssignHandler = async() => {
 
-    console.log("randomNumber");
+    setLoading(true);
+
     const accounts = await web3.eth.getAccounts();
     console.log(Random.methods);
     console.log(accounts[0]);
@@ -27,6 +29,7 @@ const Assign = (props) => {
     setTimeout(async () => {
       let rand = await Random.methods.randomResult().call();
       setRandom(rand);
+      setLoading(false)
       console.log(random);
     }, 40000);
 
@@ -34,7 +37,7 @@ const Assign = (props) => {
 
     const data = {
       date: date,
-      random: 1,
+      random: random,
       factoryId: 1,
     };
 
@@ -54,7 +57,9 @@ const Assign = (props) => {
   return (
 
     <div>
-      <Spinner/>
+
+      {loading ? <Spinner/> : null}
+
       {random}
       <input
         type="text"

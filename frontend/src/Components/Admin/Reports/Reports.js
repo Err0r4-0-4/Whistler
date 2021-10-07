@@ -8,12 +8,19 @@ import Report from "../../Cards/Report/Report";
 import { Redirect } from "react-router-dom";
 import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
+import Spinner from "../../../Ui/Spinner/Spinner";
+import { FaWindows } from "react-icons/fa";
+
 const Reports = () => {
   const [reports, setReports] = useState([]);
   const [reports1, setReports1] = useState([]);
   const [count, setCount] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(async () => {
+
+    setLoading(true);
+
     const accounts = await web3.eth.getAccounts();
 
     try {
@@ -52,6 +59,7 @@ const Reports = () => {
 
           setReports(reportsArray);
           setReports1(reportsArray);
+
         })
         .catch((err) => {
           console.log(err);
@@ -71,9 +79,13 @@ const Reports = () => {
 
           console.log(report);
         }
+
+        setLoading(false);
       }
     } catch (e) {
       console.log(e);
+      window.alert(e);
+      setLoading(false);
     }
   }, []);
 
@@ -111,6 +123,9 @@ const Reports = () => {
 
   return (
     <div className={styles.pages}>
+
+      {loading ? <Spinner/> : null}
+
       <Header />
       <div className={styles.box}>
         <div className={styles.bar}>
