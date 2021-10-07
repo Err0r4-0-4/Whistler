@@ -29,9 +29,12 @@ exports.loginAdmin = async (req, res, next) => {
 exports.assignNgo = async (req, res, next) => {
   try {
     let ngoCount = await (await Factory.find()).length;
-    ngoCount = String(ngoCount);
-    ngoCount = 10 ** ngoCount.split("").length;
-    let ngoId = req.body.random % ngoCount;
+    let ngoId;
+    if (ngoCount === 1) {
+      ngoId = 1;
+    } else {
+      ngoId = req.body.random % ngoCount;
+    }
     console.log(ngoId);
     let n = await ngo.find({ ngoId: ngoId });
     console.log(n);
