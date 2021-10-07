@@ -22,25 +22,53 @@ const Previous = () => {
 
     try {
 
-        let count = await Whistler.methods.complaint_count(localStorage.getItem("ngoId")).call({
+      await axios
+      .post("https://whistler-backend.herokuapp.com/factory/count")
+      .then(async (res) => {
+        setCount(res.data.count);
+
+        for (let i = 1; i <= res.data.count; i++) {
+          let c = await Whistler.methods.complaint_count(i).call({
             from: accounts[0],
           });
 
-          console.log(count);
+          console.log(c);
 
-          for(let i=0;i<count;i++){
-            let complain = await Whistler.methods.complaints_map(localStorage.getItem("ngoId"), i).call({
-                                from: accounts[0],
-                            });
+          for (let j = 0; j < c; j++) {
+            let report = await Whistler.methods.complaints_map(i, j).call({
+              from: accounts[0],
+            });
 
-            complainArray.push(complain);
+            complainArray.push(report);
+
+            console.log(report);
           }
+        }
 
-          setComplains(complainArray);
+        setComplains(complainArray);
 
-          console.log(complains)
+        setLoading(false);
+      })
 
-          setLoading(false);
+        // let count = await Whistler.methods.complaint_count(localStorage.getItem("ngoId")).call({
+        //     from: accounts[0],
+        //   });
+
+        //   console.log(count);
+
+        //   for(let i=0;i<count;i++){
+        //     let complain = await Whistler.methods.complaints_map(localStorage.getItem("ngoId"), i).call({
+        //                         from: accounts[0],
+        //                     });
+
+        //     complainArray.push(complain);
+        //   }
+
+        //   setComplains(complainArray);
+
+        //   console.log(complains)
+
+        //   setLoading(false);
       
     } catch (e) {
       console.log(e);
