@@ -59,7 +59,7 @@ const Reports = () => {
 
           setReports(reportsArray);
           setReports1(reportsArray);
-
+          setLoading(false);
         })
         .catch((err) => {
           console.log(err);

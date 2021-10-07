@@ -13,12 +13,19 @@ import { GoMarkGithub, GoMail } from "react-icons/go";
 import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
+import Spinner from "../../../Ui/Spinner/Spinner";
+
+
 const Admin_Auth = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const onLoginHandler = () => {
+
+    setLoading(true);
+
     const data = {
       userName: userName,
       password: password,
@@ -31,14 +38,20 @@ const Admin_Auth = () => {
       .then((res) => {
         console.log(res);
         setRedirect(true);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
+        window.alert(err);
       });
   };
 
   return (
     <div className={styles.fullpage}>
+
+      {loading ? <Spinner/> : null}
+
       <div className={styles.header}>
         <div className={styles.logo_name}>
           <div className={styles.imageprofile}>

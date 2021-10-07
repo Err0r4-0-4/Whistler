@@ -7,6 +7,7 @@ import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
 import styles from "./File.module.css";
 import img from "../../Images/user.png";
+import Spinner from "../../../Ui/Spinner/Spinner";
 
 const File = (props) => {
   const [ran, setran] = useState(false);
@@ -17,15 +18,19 @@ const File = (props) => {
   const [desc, setDesc] = useState("");
   const [list, setList] = useState([]);
   const [date, setDate] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const onComplainHandler = async () => {
     const accounts = await web3.eth.getAccounts();
+
+    setLoading(true);
 
     console.log(id);
     console.log(desc);
     console.log(localStorage.getItem("phone"));
 
-    await Whistler.methods
+    try{
+      await Whistler.methods
       .file_complain(
         id,
         desc,
@@ -36,9 +41,18 @@ const File = (props) => {
       .send({
         from: accounts[0],
       });
+
+      setLoading(false);
+    }catch(e) {
+      setLoading(false);
+      window.alert(e);
+    }
   };
 
   useEffect(async () => {
+
+    setLoading(true);
+
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, "0");
     var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
@@ -59,8 +73,11 @@ const File = (props) => {
         </option>
       ));
       setList(renderList);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
+      window.alert(error)
     }
   }, []);
 
@@ -72,6 +89,8 @@ const File = (props) => {
   return (
     <div className={styles.file}>
       <Header />
+
+      {loading ? <Spinner/> : null}
 
       <div className={styles.box}>
         <div className={styles.imgback}>

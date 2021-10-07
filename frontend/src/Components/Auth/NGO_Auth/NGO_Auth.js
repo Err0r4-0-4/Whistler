@@ -13,12 +13,18 @@ import { GoMarkGithub, GoMail } from "react-icons/go";
 import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
+import Spinner from "../../../Ui/Spinner/Spinner";
+
 const NGO_Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const onLoginHandler = () => {
+
+    setLoading(true);
+
     const data = {
       email: email,
       password: password,
@@ -38,14 +44,20 @@ const NGO_Auth = () => {
         localStorage.setItem("assigned", res.data.ngoId.assignedFactoryId);
         localStorage.setItem("isAssigned", res.data.ngoId.isAssigned);
         setRedirect(true);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
+        window.alert(err);
       });
   };
 
   return (
     <div className={styles.fullpage}>
+
+      {loading ? <Spinner/> : null}
+
       <div className={styles.header}>
         <div className={styles.logo_name}>
           <div className={styles.imageprofile}>

@@ -6,13 +6,19 @@ import { Redirect } from "react-router-dom";
 import Headerngo from "../../../Header/Headerngo";
 import img from "../../Images/user2.png";
 import styles from "./Inspect.module.css";
+import Spinner from "../../../Ui/Spinner/Spinner";
+
 const Inspect = (props) => {
   const [chemical, setChemical] = useState("");
   const [quantity, setQuantity] = useState("");
   const [remarks, setRemarks] = useState([]);
   const [Inspector, setInspector] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const onInspectHandler = async () => {
+
+    setLoading(true);
+
     const accounts = await web3.eth.getAccounts();
 
     console.log(accounts[0]);
@@ -24,7 +30,8 @@ const Inspect = (props) => {
 
     today = mm + "/" + dd + "/" + yyyy;
 
-    await Whistler.methods
+    try{
+      await Whistler.methods
       .inspect(
         localStorage.getItem("assigned"),
         chemical,
@@ -38,6 +45,11 @@ const Inspect = (props) => {
       .send({
         from: accounts[0],
       });
+    }catch(e) {
+      window.alert(e);
+      setLoading(false);
+    }
+   
   };
 
   let form = (
@@ -119,6 +131,9 @@ const Inspect = (props) => {
   return (
     <div className={styles.page}>
       <Headerngo />
+
+      {loading ? <Spinner/> : null}
+
       {console.log(localStorage.getItem("isAssigned"))}
 
       {localStorage.getItem("isAssigned") == "true" ? (

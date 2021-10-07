@@ -5,12 +5,16 @@ import web3 from "../../../ethereum/web3";
 import Whistler from "../../../ethereum/whistler";
 import Complain from "../../Cards/Complain/Complain";
 import { Redirect } from "react-router-dom";
+import Spinner from "../../../Ui/Spinner/Spinner";
 
 const Complains = () => {
   const [complains, setComplains] = useState([]);
   const [count, setCount] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(async () => {
+
+    setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
 
@@ -36,9 +40,12 @@ const Complains = () => {
 
           console.log(complains)
 
+          setLoading(false);
       
     } catch (e) {
       console.log(e);
+      setLoading(false);
+      window.alert(e);
     }
   }, []);
 
@@ -57,6 +64,8 @@ const Complains = () => {
 
   return (
     <div>
+
+      {loading ? <Spinner/> : null}
       COMPLAINS
       {complainsList}
     </div>
