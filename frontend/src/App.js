@@ -30,11 +30,11 @@ function App() {
           <Route path="/ngo/auth" exact component={NGO_Auth} />
           <Route path="/factory/auth" exact component={Factory_Auth} />
           <Route path="/admin/add" exact component={Add} />
-          <Route path="/inspect" exact component={Inspect} />
-          <Route path="/assign" exact component={Assign} />
+          <Route path="/ngo/inspect" exact component={Inspect} />
+          <Route path="/admin/assign" exact component={Assign} />
           <Route path="/admin/reports" exact component={Reports} />
-          <Route path="/file" exact component={File} />
-          <Route path="/compalins" exact component={Complains} />
+          <Route path="/user/file" exact component={File} />
+          <Route path="/admin/complaints" exact component={Complains} />
           <Route path="/*" component={Notfound} />
         </Switch>
       </div>
