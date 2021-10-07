@@ -44,7 +44,7 @@ function Home() {
                 <span>Admin</span>
               </h3>
             </Link>
-            <Link to="/ngo">
+            <Link to="/ngo/auth">
               <div>
                 <VscOrganization className={styles.icon} />
               </div>
@@ -52,7 +52,7 @@ function Home() {
                 <span>NGO</span>
               </h3>
             </Link>
-            <Link to="/public" className={styles.bottom}>
+            <Link to="/public/auth" className={styles.bottom}>
               <div>
                 <MdOutlinePublic className={styles.icon} />
               </div>

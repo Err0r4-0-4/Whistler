@@ -7,7 +7,7 @@ import Complain from "../../Cards/Complain/Complain";
 import { Redirect } from "react-router-dom";
 import Spinner from "../../../Ui/Spinner/Spinner";
 
-const Complains = () => {
+const Previous = () => {
   const [complains, setComplains] = useState([]);
   const [count, setCount] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -72,4 +72,4 @@ const Complains = () => {
   );
 };
 
-export default Complains;
+export default Previous;

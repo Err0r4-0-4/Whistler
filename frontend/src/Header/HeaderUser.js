@@ -22,6 +22,11 @@ const HeaderUser = () => {
   if (location.pathname !== "/home") {
     loc = true;
   }
+
+  const logoutHandler = () => {
+    localStorage.clear();
+  }
+
   return (
     <div>
       <div className={loc ? styles.bold : styles.header}>
@@ -39,7 +44,7 @@ const HeaderUser = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/user/new" activeClassName={styles.active}>
+            <NavLink to="/user/file" activeClassName={styles.active}>
               New Complaints
             </NavLink>
           </li>
@@ -54,7 +59,7 @@ const HeaderUser = () => {
             </NavLink>
           </li>
         </ul>
-        <NavLink to="/" className={styles.right}>
+        <NavLink to="/" className={styles.right} onClick={logoutHandler}>
           <div>LogOut</div>
         </NavLink>
 

@@ -22,6 +22,11 @@ const Headerngo = () => {
   if (location.pathname !== "/home") {
     loc = true;
   }
+
+  const logoutHandler = () => {
+    localStorage.clear();
+  };
+
   return (
     <div>
       <div className={loc ? styles.bold : styles.header}>
@@ -49,7 +54,8 @@ const Headerngo = () => {
             </NavLink>
           </li>
         </ul>
-        <NavLink to="/" className={styles.right}>
+
+        <NavLink to="/" className={styles.right} onClick={logoutHandler}>
           <div>LogOut</div>
         </NavLink>
 

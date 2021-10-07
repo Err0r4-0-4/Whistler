@@ -7,7 +7,15 @@
     
     -webkit-animation: sk-rotate 2.0s infinite linear;
     animation: sk-rotate 2.0s infinite linear;
+    width: 40px;
+    height: 40px;
+  
+    margin: 100px auto;
+    position: fixed;
     z-index: 101;
+    /* position: fixed; */
+    top: 40%;
+    left: 50%;
   }
   
   .dot1, .dot2 {

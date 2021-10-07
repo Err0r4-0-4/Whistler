@@ -7,13 +7,19 @@ import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
 import Modal from "../../../Ui/Modal/Modal";
 import Assign from "../../Assign/Assign";
+import Spinner from "../../../Ui/Spinner/Spinner";
 
 const Factories = () => {
   const [factories, setFactories] = useState([]);
   const [assigning, setAssigning] = useState(false);
   const [redirect, setRedirect] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [id, setId] = useState(false);
 
   useEffect(async () => {
+
+    setLoading(true);
+
     try {
       axios
         .post("https://whistler-backend.herokuapp.com/factory/getfactory")
@@ -21,12 +27,17 @@ const Factories = () => {
           console.log(res.data.message);
           setFactories(res.data.message);
           setRedirect(true);
+          setLoading(false);
         })
         .catch((err) => {
           console.log(err);
+          window.alert(err);
+          setLoading(false);
         });
     } catch (e) {
       console.log(e);
+      window.alert(e);
+          setLoading(false);
     }
   }, []);
 
@@ -34,8 +45,9 @@ const Factories = () => {
     setAssigning(false);
   }
 
-  const onAssignHandler = () => {
-    console.log("clicked");
+  const onAssignHandler = (props) => {
+    console.log(props);
+    setId(props);
     setAssigning(true);
   }
 
@@ -54,10 +66,15 @@ const Factories = () => {
 
   return (
     <div className={styles.pages}>
+
+      {/* <Spinner/> */}
+
+      {loading ? <Spinner/> : null}
+
       <Header />
 
       <Modal show={assigning} close={assignCancelHandler}>
-          <Assign/>
+          <Assign factoryId={id}/>
       </Modal>
 
       <div className={styles.box}>

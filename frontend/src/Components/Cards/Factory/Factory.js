@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import Modal from "../../../Ui/Modal/Modal";
 import styles from "./Factory.module.css";
 
 import img from "../../Images/user2.png";
 const Factory = (props) => {
+
   const onScheduleHandler = () => {
     console.log(props.id);
   };
@@ -31,7 +33,7 @@ const Factory = (props) => {
           <div className={styles.group}>{props.email}</div>
         </div>
 
-        <div onClick={props.assign} className={styles.btn}>
+        <div onClick={() => props.assign(props.id)} className={styles.btn}>
           SCHEDULE
         </div>
       </div>
