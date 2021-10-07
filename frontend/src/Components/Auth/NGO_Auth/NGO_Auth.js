@@ -43,8 +43,10 @@ const NGO_Auth = () => {
         localStorage.setItem("dateON", res.data.ngoId.dateOn);
         localStorage.setItem("assigned", res.data.ngoId.assignedFactoryId);
         localStorage.setItem("isAssigned", res.data.ngoId.isAssigned);
+        localStorage.setItem("permissions", "ngo");
         setRedirect(true);
         setLoading(false);
+        window.location.reload()
       })
       .catch((err) => {
         console.log(err);
@@ -76,7 +78,7 @@ const NGO_Auth = () => {
         </div>
       </div>
       <div className={styles.box}>
-        {redirect ? <Redirect to="/ngo" /> : null}
+        {redirect ? <Redirect to="/ngo/home" /> : null}
         <div className={styles.imgback}>
           <img src={img} className={styles.img} />
         </div>
@@ -89,7 +91,7 @@ const NGO_Auth = () => {
         />
 
         <input
-          type="text"
+          type="password"
           placeholder="Password"
           onChange={(event) => setPassword(event.target.value)}
           className={styles.inp}

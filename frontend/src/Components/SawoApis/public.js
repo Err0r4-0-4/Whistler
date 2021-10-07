@@ -6,6 +6,8 @@ const LoginPage = () => {
     function sawoLoginCallback(payload) {
         console.log(payload.identifier);
         localStorage.setItem("phone", payload.identifier);
+        localStorage.setItem("permissions", "public");
+        window.location.reload()
     }
     
     const sawoConfig = {
