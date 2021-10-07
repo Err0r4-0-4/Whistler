@@ -18,9 +18,6 @@ const Footer = () => (
           <li>
             <Link href="history">HELP</Link>
           </li>
-          <li>
-            <a href="#">SIGNOUT</a>
-          </li>
         </ul>
       </div>
       <div className={styles.fitems}>
@@ -30,9 +27,6 @@ const Footer = () => (
           </li>
           <li>
             <Link href="/orders">ABOUT</Link>
-          </li>
-          <li>
-            <Link to="/">MY DONATIOn</Link>
           </li>
         </ul>
       </div>
