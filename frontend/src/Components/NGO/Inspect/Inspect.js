@@ -33,11 +33,20 @@ const Inspect = (props) => {
 
     }
 
-  return (
+    
+    let form = <div>
 
-    <div>
+      <div>{localStorage.getItem("name")}</div>
 
-        <input type="text" placeholder="chemical name"
+      <div>Assigned Factory ID: {localStorage.getItem("Assigned Factory Id")}</div>
+      
+      <div>Assigned Factory Name: TISCO</div>
+
+      <div>Assigned On: {localStorage.getItem("dateON")}</div>
+
+      <div>Inspection Date: {localStorage.getItem("date")}</div>
+
+      <input type="text" placeholder="chemical name"
          onChange={(event) => setChemical(event.target.value)}/>
 
         <input type="text" placeholder="quantity" 
@@ -50,6 +59,16 @@ const Inspect = (props) => {
         onChange={(event) => setInspector(event.target.value)}/>
 
         <button onClick={onInspectHandler}>SUBMIT</button>
+
+    </div>
+
+  return (
+
+    <div>
+
+      {console.log(localStorage.getItem("isAssigned"))}
+
+      {localStorage.getItem("isAssigned")=="true" ? form : <div> NO Assignment </div>}
 
     </div>
   );
