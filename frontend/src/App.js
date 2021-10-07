@@ -14,6 +14,8 @@ import Complains from "./Components/Public/complains/complains";
 import Help from "./Components/Help/Help";
 import Previous from "./Components/Public/Previous/Previos";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Mainpage from "./Ui/Home/Mainpage";
+import Mainpage2 from "./Ui/Home/Mainpage2";
 
 import Assign from "./Components/Assign/Assign";
 import Notfound from "./Ui/Notfound/Notfound";
@@ -26,7 +28,11 @@ function App() {
           <Route path="/help" exact component={Help} />
           <Route path="/public/auth" exact component={Public_Auth} />
           <Route path="/admin/auth" exact component={Admin_Auth} />
+          <Route path="/admin/home" exact component={Mainpage} />
+
           <Route path="/admin/factories" exact component={Factories} />
+          <Route path="/ngo/home" exact component={Mainpage2} />
+
           <Route path="/ngo/auth" exact component={NGO_Auth} />
           <Route path="/factory/auth" exact component={Factory_Auth} />
           <Route path="/admin/add" exact component={Add} />

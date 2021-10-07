@@ -25,7 +25,7 @@ const Headerngo = () => {
 
   const logoutHandler = () => {
     localStorage.clear();
-  }
+  };
 
   return (
     <div>
@@ -48,8 +48,14 @@ const Headerngo = () => {
               Inspect
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/help" activeClassName={styles.active}>
+              Help
+            </NavLink>
+          </li>
         </ul>
-        <NavLink to="/contact" className={styles.right} onClick={logoutHandler}>
+
+        <NavLink to="/" className={styles.right} onClick={logoutHandler}>
           <div>LogOut</div>
         </NavLink>
 
@@ -65,47 +71,35 @@ const Headerngo = () => {
           <ul className={styles.flex2}>
             <li>
               <NavLink
-                to="/home"
+                to="/ngo/home"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                ho<span className={styles.yellow}>ME</span>
+                Home
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/experience"
+                to="/ngo/inspect"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                <span className={styles.yellow}>MY</span> Experience
+                Inspect
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/projects"
+                to="/help"
                 activeClassName={styles.active2}
                 onClick={clickhandler}
               >
-                <span className={styles.yellow}>MY</span>Projects
+                Help
               </NavLink>
             </li>
+
             <li>
-              <NavLink
-                to="/skills"
-                activeClassName={styles.active2}
-                onClick={clickhandler}
-              >
-                <span className={styles.yellow}>MY</span>Skills
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                activeClassName={styles.active2}
-                onClick={clickhandler}
-              >
-                Contact <span className={styles.yellow}>ME</span>
+              <NavLink to="/" onClick={clickhandler}>
+                Signout
               </NavLink>
             </li>
           </ul>
