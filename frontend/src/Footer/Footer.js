@@ -42,30 +42,30 @@ const Footer = () => (
     <div className={styles.fitemsm}>
       <ul className={styles.fitemli}>
         <li>
-          <a href="https://github.com/extend">
+          <a href="https://github.com/whistler">
             <AiFillGitlab />
           </a>
         </li>
 
         <li>
-          <a href="https://instagram.com/extend">
+          <a href="https://instagram.com/whistler">
             <AiFillInstagram />
           </a>
         </li>
         <li>
-          <a href="mailto:support@extend.com">
+          <a href="mailto:support@whistler.com">
             <AiFillMail />
           </a>
         </li>
         <li>
-          <a href="https://linkedin.com/extend">
+          <a href="https://linkedin.com/whistler">
             <AiFillLinkedin />
           </a>
         </li>
       </ul>
     </div>
     <br />
-    <div className={styles.last2}>...DO DOnate...</div>
+    <div className={styles.last2}>...Whistler...</div>
   </div>
 );
 
