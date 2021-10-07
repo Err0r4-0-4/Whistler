@@ -6,52 +6,61 @@ import Random from "../../ethereum/random";
 import Spinner from "../../Ui/Spinner/Spinner";
 
 const Assign = (props) => {
-
   const [date, setDate] = useState([]);
   const [random, setRandom] = useState([]);
   const [loading, setLoading] = useState(false);
 
   // useEffect(async () => {
-    
+
   // }, []);
 
-  const onAssignHandler = async() => {
-
+<<<<<<< HEAD
     setLoading(true);
 
+=======
+  const onAssignHandler = async () => {
+    console.log("randomNumber");
+>>>>>>> a586a345189c90c4beff0ad5bbd3460c1cbe3064
     const accounts = await web3.eth.getAccounts();
     console.log(Random.methods);
+    console.log(Random.events);
+
     console.log(accounts[0]);
     let randomNumber = await Random.methods.getRandomNumber().send({
       from: accounts[0],
     });
     console.log(randomNumber);
-    setTimeout(async () => {
-      let rand = await Random.methods.randomResult().call();
-      setRandom(rand);
-      setLoading(false)
-      console.log(random);
-    }, 40000);
+    // setTimeout(async () => {
+    //   let rand = await Random.methods.randomResult().call();
+    //   setRandom(rand);
+    //   console.log(random);
+    // }, 40000);
 
-/////////////////////////////////////////////////////////////////////////////////////
+    Random.events.randomNumberGenrated(function(error, event) {
+      if (error) {
+        console.log(error);
+      }
+      console.log("IN EVENT!!!");
+      console.log(event);
+      console.log(event.returnValues.randomResult);
+      // const data = {
+      //   date: date,
+      //   random: 1,
+      //   factoryId: 1,
+      // };
 
-    const data = {
-      date: date,
-      random: random,
-      factoryId: 1,
-    };
+      // console.log(data);
 
-    console.log(data);
-
-    axios
-      .post("https://whistler-backend.herokuapp.com/admin/assignNgo", data)
-      .then((res) => {
-        console.log(res);
-        //   setRedirect(true);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      //   .post("https://whistler-backend.herokuapp.com/admin/assignNgo", data)
+      //   .then((res) => {
+      //     console.log(res);
+      //     //   setRedirect(true);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+    });
   };
 
   return (
