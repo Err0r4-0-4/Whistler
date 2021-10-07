@@ -5,8 +5,12 @@ import { Redirect } from "react-router-dom";
 import styles from "./Factories.module.css";
 import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
+import Modal from "../../../Ui/Modal/Modal";
+import Assign from "../../Assign/Assign";
+
 const Factories = () => {
   const [factories, setFactories] = useState([]);
+  const [assigning, setAssigning] = useState(false);
   const [redirect, setRedirect] = useState("");
 
   useEffect(async () => {
@@ -26,6 +30,15 @@ const Factories = () => {
     }
   }, []);
 
+  const assignCancelHandler = () => {
+    setAssigning(false);
+  }
+
+  const onAssignHandler = () => {
+    console.log("clicked");
+    setAssigning(true);
+  }
+
   const factoriesList = (
     <div className={styles.flex}>
       {factories.map((factory) => (
@@ -33,6 +46,7 @@ const Factories = () => {
           name={factory.name}
           email={factory.email}
           id={factory.factoryId}
+          assign={onAssignHandler}
         />
       ))}
     </div>
@@ -41,6 +55,11 @@ const Factories = () => {
   return (
     <div className={styles.pages}>
       <Header />
+
+      <Modal show={assigning} close={assignCancelHandler}>
+          <Assign/>
+      </Modal>
+
       <div className={styles.box}>
         <div className={styles.bar}>
           <p>FACTORIES</p>
