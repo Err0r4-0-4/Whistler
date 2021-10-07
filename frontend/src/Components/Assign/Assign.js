@@ -4,16 +4,14 @@ import web3 from "../../ethereum/web3";
 import { Redirect } from "react-router-dom";
 import Random from "../../ethereum/random";
 const Assign = (props) => {
-
   const [date, setDate] = useState([]);
   const [random, setRandom] = useState([]);
 
   // useEffect(async () => {
-    
+
   // }, []);
 
-  const onAssignHandler = async() => {
-
+  const onAssignHandler = async () => {
     console.log("randomNumber");
     const accounts = await web3.eth.getAccounts();
     console.log(Random.methods);
