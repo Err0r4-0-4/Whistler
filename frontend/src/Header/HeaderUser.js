@@ -7,7 +7,7 @@ import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
-const Header = () => {
+const HeaderUser = () => {
   const [open, setOpen] = useState(false);
   const clickhandler = () => {
     setOpen(!open);
@@ -29,35 +29,23 @@ const Header = () => {
           {/* <img src={img} alt="Logo" className={styles.flash} /> */}
 
           <h2 className={styles.name}>
-            <NavLink to="/admin/home">Whistler!</NavLink>
+            <NavLink to="/user/home">Whistler!</NavLink>
           </h2>
         </div>
         <ul className={styles.flex}>
           <li>
-            <NavLink to="admin/home" activeClassName={styles.active}>
+            <NavLink to="/user/home" activeClassName={styles.active}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/admin/add" activeClassName={styles.active}>
-              Add
+            <NavLink to="/user/new" activeClassName={styles.active}>
+              New Complaints
             </NavLink>
           </li>
           <li>
-            <NavLink to="/admin/reports" activeClassName={styles.active}>
-              Reports
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/admin/factories" activeClassName={styles.active}>
-              Assign
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/admin/complaints" activeClassName={styles.active}>
-              Complaints
+            <NavLink to="/user/previous" activeClassName={styles.active}>
+              Previous
             </NavLink>
           </li>
         </ul>
@@ -154,4 +142,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderUser;

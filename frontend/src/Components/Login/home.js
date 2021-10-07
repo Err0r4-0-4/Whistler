@@ -25,7 +25,7 @@ function Home() {
 
         <div className={styles.fifty}>
           <div className={styles.select}>
-            <Link to="#">Help</Link>
+            <Link to="/help">Help</Link>
           </div>
         </div>
       </div>

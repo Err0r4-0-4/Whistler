@@ -15,7 +15,7 @@ import Help from "./Components/Help/Help";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Assign from "./Components/Assign/Assign";
-
+import Notfound from "./Ui/Notfound/Notfound";
 function App() {
   return (
     <Router>
@@ -32,9 +32,10 @@ function App() {
           <Route path="/admin/add" exact component={Add} />
           <Route path="/inspect" exact component={Inspect} />
           <Route path="/assign" exact component={Assign} />
-          <Route path="/reports" exact component={Reports} />
+          <Route path="/admin/reports" exact component={Reports} />
           <Route path="/file" exact component={File} />
           <Route path="/compalins" exact component={Complains} />
+          <Route path="/*" component={Notfound} />
         </Switch>
       </div>
     </Router>
