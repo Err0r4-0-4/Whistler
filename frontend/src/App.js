@@ -34,7 +34,7 @@ function App() {
           <Route path="/assign" exact component={Assign} />
           <Route path="/admin/reports" exact component={Reports} />
           <Route path="/file" exact component={File} />
-          <Route path="/compalins" exact component={Complains} />
+          <Route path="/complains" exact component={Complains} />
           <Route path="/*" component={Notfound} />
         </Switch>
       </div>
