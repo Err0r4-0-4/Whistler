@@ -68,7 +68,7 @@ const Inspect = (props) => {
 
       {console.log(localStorage.getItem("isAssigned"))}
 
-      {localStorage.getItem("isAssigned")=="true" ? form : <div> NO Assignment </div>}
+      {localStorage.getItem("isAssigned")=="true"? form : <div> NO Assignment </div>}
 
     </div>
   );
