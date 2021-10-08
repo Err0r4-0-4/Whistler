@@ -28,7 +28,7 @@ const Header = () => {
 
   const logoutHandler = () => {
     localStorage.clear();
-  }
+  };
 
   return (
     <div>
@@ -126,6 +126,15 @@ const Header = () => {
                 onClick={clickhandler}
               >
                 Complaints
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/help"
+                activeClassName={styles.active2}
+                onClick={clickhandler}
+              >
+                Help
               </NavLink>
             </li>
             <li>

@@ -154,7 +154,6 @@
   max-width: 340px;
   outline: none;
   border: none;
-  min-width: 320px;
 }
 
 .inp {
@@ -198,6 +197,7 @@
   background-color: #098a09;
   letter-spacing: 4px;
 }
+
 @media all and (max-width: 900px) {
   .pages {
     flex: 50%;
@@ -254,6 +254,9 @@
   }
   .inp {
     width: 90%;
+  }
+  .fullpage {
+    height: 110vh;
   }
 }
 
@@ -450,4 +453,7 @@
   .footerbar {
     background-color: #04a045;
   }
+}
+
+@media all and (max-width: 700px) {
 }

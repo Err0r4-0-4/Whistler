@@ -18,7 +18,6 @@ const Reports = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(async () => {
-
     setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
@@ -123,13 +122,14 @@ const Reports = () => {
 
   return (
     <div className={styles.pages}>
-
-      {loading ? <Spinner/> : null}
+      {loading ? <Spinner /> : null}
 
       <Header />
       <div className={styles.box}>
         <div className={styles.bar}>
-          <p>Complaints</p>
+          <p>
+            Reports<p className={styles.small}>: by NGO</p>
+          </p>
         </div>
         {reportsList}
       </div>

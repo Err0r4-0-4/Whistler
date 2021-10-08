@@ -76,9 +76,9 @@
     margin-top: 15px;
     padding-top: 15px;
     height: 50px;
-    opacity: 1;
+    opacity: 0.5;
   }
-  50% {
+  2% {
     opacity: 0;
   }
   100% {
@@ -288,4 +288,141 @@
   background-color: #04a045;
   color: white;
   letter-spacing: 2px;
+}
+
+@media all and (max-width: 850px) {
+  .big,
+  .faq {
+    margin: 50px 8%;
+    width: 80%;
+  }
+  .faq {
+    padding: 10px 0;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .big.faq {
+    margin: 50px 8%;
+    width: 80%;
+    padding-bottom: 15px;
+  }
+
+  .openans {
+    padding-bottom: 50px;
+  }
+  .faq {
+    padding: 10px 0;
+    width: 86%;
+  }
+
+  .help {
+    margin: 30px 15px;
+  }
+
+  .faqques {
+    font-size: 18px;
+  }
+
+  .open {
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .big.faq {
+    margin: 50px 6%;
+    width: 80%;
+    padding-bottom: 15px;
+  }
+  .openans {
+    padding-bottom: 80px;
+  }
+  .faq {
+    padding: 10px 0;
+    width: 88%;
+  }
+
+  .help {
+    margin: 30px 10px;
+  }
+
+  .faqques {
+    font-size: 18px;
+  }
+
+  .open {
+    padding-bottom: 30px;
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .big,
+  .faq {
+    margin: 50px 4%;
+    width: 80%;
+    padding-bottom: 15px;
+  }
+  .faq {
+    padding: 10px 0;
+    width: 90%;
+  }
+
+  .help {
+    margin: 25px 5px;
+  }
+
+  .faqques {
+    font-size: 16px;
+  }
+
+  .open {
+    padding-bottom: 40px;
+    font-size: 16px;
+  }
+  .openans {
+    padding-bottom: 110px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .big.faq {
+    margin: 50px 4%;
+    width: 80%;
+    padding-bottom: 15px;
+    padding: 10px 15px;
+  }
+  .faq {
+    padding: 10px 0;
+    width: 90%;
+  }
+
+  .help {
+    margin: 25px 5px;
+  }
+
+  .faqques {
+    font-size: 14px;
+  }
+
+  .open {
+    padding-bottom: 50px;
+    font-size: 16px;
+  }
+
+  .openans {
+    padding-bottom: 140px;
+  }
+
+  .heading {
+    font-size: 22px;
+    text-align: left;
+  }
+  .add,
+  .up {
+    padding: 0px;
+    font-size: 14px;
+  }
 }

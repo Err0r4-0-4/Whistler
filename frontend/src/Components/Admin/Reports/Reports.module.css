@@ -84,13 +84,20 @@
     font-size: 28px;
     letter-spacing: 1px;
   }
+  .bar .small {
+    font-size: 16px;
+  }
+  .search {
+    width: 80%;
+    margin-left: 15%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
   .box {
-    min-width: 95%;
+    min-width: 94%;
     max-width: 100px;
-    margin: 10px 2.5%;
+    margin: 10px 3%;
     flex-direction: column-reverse;
   }
   .bar {
@@ -104,8 +111,17 @@
     text-align: center;
     padding: 20px 0;
   }
+  .bar .small {
+    font-size: 14px;
+  }
 }
 
 .flex {
   display: block;
+}
+
+.bar .small {
+  text-transform: none;
+  font-size: 18px;
+  display: inline;
 }

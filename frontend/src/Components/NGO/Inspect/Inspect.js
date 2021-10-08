@@ -88,10 +88,12 @@ const Inspect = (props) => {
               <p>Inspection Date: </p>
               <div className={styles.group}>{localStorage.getItem("date")}</div>
             </div>
-            {!show && (
+            {!show ? (
               <div onClick={func1} className={styles.btn}>
                 Inspect
               </div>
+            ) : (
+              <br />
             )}
           </div>
         </div>
