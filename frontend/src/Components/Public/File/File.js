@@ -8,6 +8,7 @@ import Footer from "../../../Footer/Footer";
 import styles from "./File.module.css";
 import img from "../../Images/user.png";
 import Spinner from "../../../Ui/Spinner/Spinner";
+import { RiCoinsLine } from "react-icons/ri";
 
 const File = (props) => {
   const [ran, setran] = useState(false);
@@ -40,21 +41,22 @@ const File = (props) => {
         formData
       );
 
-      console.log(res);
+      console.log( res.data.fileUrl);
 
-      // await Whistler.methods
-      // .file_complain(
-      //   id,
-      //   desc,
-      //   date,
-      //   "aaaaaaaaaaaaaaaa",
-      //   localStorage.getItem("phone")
-      // )
-      // .send({
-      //   from: accounts[0],
-      // });
+      await Whistler.methods
+      .file_complain(
+        id,
+        desc,
+        date,
+        res.data.fileUrl,
+        localStorage.getItem("phone")
+      )
+      .send({
+        from: accounts[0],
+      });
 
       setLoading(false);
+      console.log("done")
     }catch(e) {
       setLoading(false);
       window.alert(e);
