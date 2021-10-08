@@ -7,6 +7,7 @@ import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
+import SimpleForm from "../Bot/SimpleForm";
 const HeaderUser = () => {
   const [open, setOpen] = useState(false);
   const clickhandler = () => {
@@ -29,6 +30,8 @@ const HeaderUser = () => {
 
   return (
     <div>
+      <SimpleForm />
+
       <div className={loc ? styles.bold : styles.header}>
         <div className={styles.logo}>
           {/* <img src={img} alt="Logo" className={styles.flash} /> */}

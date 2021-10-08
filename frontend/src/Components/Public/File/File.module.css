@@ -254,4 +254,12 @@
     min-width: 300px;
     margin: 100px auto;
   }
+
+  .inp,
+  .btn,
+  .btn2,
+  .txt,
+  .sel {
+    min-width: 250px;
+  }
 }

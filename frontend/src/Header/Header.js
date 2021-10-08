@@ -7,7 +7,7 @@ import { FaLinkedinIn, FaSearchLocation } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCall, MdLocationSearching } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
-
+import Simpleform from "../Bot/SimpleForm";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const clickhandler = () => {
@@ -68,10 +68,10 @@ const Header = () => {
               Complaints
             </NavLink>
           </li>
+          <NavLink to="/" className={styles.right} onClick={logoutHandler}>
+            <div>LogOut</div>
+          </NavLink>
         </ul>
-        <NavLink to="/" className={styles.right} onClick={logoutHandler}>
-          <div>LogOut</div>
-        </NavLink>
 
         <div className={styles.burger} onClick={clickhandler}>
           <div className={open ? styles.lines4 : styles.lines1}></div>

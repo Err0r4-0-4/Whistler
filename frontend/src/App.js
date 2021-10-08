@@ -1,5 +1,6 @@
 import "./App.css";
 import Home from "./Components/Login/home";
+import MouseParticles from "react-mouse-particles";
 import Admin_Auth from "./Components/Auth/Admin_Auth/Admin_Auth";
 import NGO_Auth from "./Components/Auth/NGO_Auth/NGO_Auth";
 import Factory_Auth from "./Components/Auth/Factory_Auth/Factory_Auth";
@@ -17,7 +18,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Mainpage from "./Ui/Home/Mainpage";
 import Mainpage2 from "./Ui/Home/Mainpage2";
 import Mainpage3 from "./Ui/Home/Mainpage3";
-
 import Assign from "./Components/Assign/Assign";
 import Notfound from "./Ui/Notfound/Notfound";
 function App() {
@@ -64,23 +64,26 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/user/home" exact component={Mainpage3} />
-          <Route path="/user/previous" exact component={Previous} />
-          <Route path="/user/file" exact component={File} />
-          <Route path="/help" exact component={Help} />
-          <Route path="/public/auth" exact component={Public_Auth} />
-          <Route path="/admin/auth" exact component={Admin_Auth} />
-          <Route path="/ngo/auth" exact component={NGO_Auth} />
-          <Route path="/factory/auth" exact component={Factory_Auth} />
-          {routes}
-          <Route path="/*" component={Notfound} />
-        </Switch>
-      </div>
-    </Router>
+    <div>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/user/home" exact component={Mainpage3} />
+            <Route path="/user/previous" exact component={Previous} />
+            <Route path="/user/file" exact component={File} />
+            <Route path="/help" exact component={Help} />
+            <Route path="/public/auth" exact component={Public_Auth} />
+            <Route path="/admin/auth" exact component={Admin_Auth} />
+            <Route path="/ngo/auth" exact component={NGO_Auth} />
+            <Route path="/factory/auth" exact component={Factory_Auth} />
+            {routes}
+            <Route path="/*" component={Notfound} />
+          </Switch>
+        </div>
+      </Router>
+      <MouseParticles g={0} num={6} color={["#04a045", "#133d25", "#7bb411"]} />
+    </div>
   );
 }
 

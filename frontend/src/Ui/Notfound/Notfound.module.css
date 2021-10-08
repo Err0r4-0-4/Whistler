@@ -3,8 +3,9 @@
   text-align: center;
   padding-bottom: 20px;
   padding-top: 100px;
-  margin-bottom: -50px;
-  height: 100vh;
+
+  overflow: hidden;
+  height: 70vh;
 }
 
 .center h1 {
@@ -16,6 +17,7 @@
   letter-spacing: 1px;
   position: relative;
   padding-top: 30px;
+  overflow: hidden;
 }
 
 .center h1::after {
@@ -51,6 +53,7 @@
 }
 
 .center img {
+  overflow: hidden;
   max-height: 400px;
 }
 
@@ -81,6 +84,7 @@
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
+  overflow: hidden;
   -o-transition: all ease 0.3s;
 }
 
@@ -89,5 +93,6 @@
   background-color: white;
   color: #43a047;
   box-shadow: 1px 1px 10px #43a047;
+  overflow: hidden;
   letter-spacing: 3px;
 }

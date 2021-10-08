@@ -31,11 +31,9 @@ const Notfound = () => {
   }
 
   return (
-    <div>
-      <div className={styles.center}>
-        <h1>Page Not found</h1> <img src={img} alt="Not found" />
-        {routes}
-      </div>
+    <div className={styles.center}>
+      <h1>Page Not found</h1> <img src={img} alt="Not found" />
+      {routes}
     </div>
   );
 };

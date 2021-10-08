@@ -53,11 +53,10 @@ const Headerngo = () => {
               Help
             </NavLink>
           </li>
+          <NavLink to="/" className={styles.right} onClick={logoutHandler}>
+            <div>LogOut</div>
+          </NavLink>
         </ul>
-
-        <NavLink to="/" className={styles.right} onClick={logoutHandler}>
-          <div>LogOut</div>
-        </NavLink>
 
         <div className={styles.burger} onClick={clickhandler}>
           <div className={open ? styles.lines4 : styles.lines1}></div>

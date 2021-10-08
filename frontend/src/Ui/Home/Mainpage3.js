@@ -6,7 +6,7 @@ import { BiRegistered } from "react-icons/bi";
 import { FaIndustry, FaComment, FaRegFileExcel } from "react-icons/fa";
 import { CgUserlane } from "react-icons/cg";
 import HeaderUser from "../../Header/HeaderUser";
-import Info from "./Info";
+import Info3 from "./Info3";
 import Footer from "../../Footer/Footer";
 const Mainpage3 = () => {
   const [small, setSmall] = useState(false);
@@ -114,7 +114,7 @@ const Mainpage3 = () => {
         </ul>
       </div>
       <h1 className={styles.title}>Further</h1>
-      <Info />
+      <Info3 />
       <Footer />
     </div>
   );
