@@ -9,9 +9,11 @@ const transporter = nodemailer.createTransport({
     pass: process.env.password,
   },
 });
-let count = 0;
+
 exports.register = async (req, res, next) => {
   try {
+    let factoryCount = await (await factory.find()).length;
+    console.log(factoryCount);
     const email = req.body.email;
     const password = Math.random().toString(36).slice(-8);
     const name = req.body.name;
@@ -19,14 +21,14 @@ exports.register = async (req, res, next) => {
       email: email,
       password: password,
       name: name,
-      factoryId: count++,
+      factoryId: factoryCount + 1,
     });
     await fact.save();
     var mailOptions = {
       from: process.env.email,
       to: email,
-      subject: "Credentials for Your Account!",
-      text: `Email: ${email} and Password: ${password} (Keep it safe and don't share this with anyone!)`,
+      subject: "Notice!",
+      text: `You have been added to our Program "WHISTLER"!`,
     };
     transporter
       .sendMail(mailOptions)
@@ -60,7 +62,7 @@ exports.loginFactory = async (req, res, next) => {
       expiresIn: "11h",
     });
 
-    res.status(200).send({ token: token, factId: fact.id });
+    res.status(200).send({ token: token, factId: fact });
     return;
   } catch (error) {
     console.log(error);
@@ -75,7 +77,18 @@ exports.getFactory = async (req, res, next) => {
     res.status(200).send({ message: factorys });
   } catch {
     console.log(error);
-    res.status(200).send({ message: error.message });
+    res.status(400).send({ message: error.message });
+    return;
+  }
+};
+
+exports.getFactoryCount = async (req, res, next) => {
+  try {
+    let factoryCount = await (await factory.find()).length;
+    res.status(200).send({ count: factoryCount });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ message: error.message });
     return;
   }
 };
