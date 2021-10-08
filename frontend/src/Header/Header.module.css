@@ -1,5 +1,5 @@
 .header {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Staatliches', cursive;
   min-height: 76px;
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@
 }
 .bold {
   min-height: 76px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Staatliches', cursive;
   position: fixed;
   top: 0;
   left: 0;
@@ -87,7 +87,7 @@
   z-index: -1;
 }
 .name {
-  font-family: "Monoton", cursive;
+  font-family: 'Staatliches', cursive;
   font-size: 34px;
   font-weight: 300;
   color: white;
@@ -439,7 +439,7 @@
   top: 11vh;
   left: 0%;
   z-index: 1001;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Staatliches', cursive;
   min-height: 76px;
   position: fixed;
   display: none;
@@ -456,7 +456,7 @@
   top: 11vh;
   left: 0%;
   z-index: 1001;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Staatliches', cursive;
   min-height: 76px;
   position: fixed;
   display: none;
