@@ -74,6 +74,7 @@ function App() {
           <Route path="/ngo/auth" exact component={NGO_Auth} />
           <Route path="/factory/auth" exact component={Factory_Auth} />
           {routes}
+          <Route path="/*" component={Notfound} />
         </Switch>
       </div>
     </Router>

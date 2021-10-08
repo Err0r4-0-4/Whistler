@@ -88,6 +88,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.flex}>
+        <div className={styles.fitems}>{routes}</div>
         <div className={styles.fitems}>
           <ul className={styles.fitemli}>
             <h2>Docs</h2>
@@ -129,10 +130,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className={styles.fitems}>{routes}</div>
       </div>
+      <div className={styles.last}> Social Media Handles</div>
 
-      <div className={styles.last}> ErrOr 4:O4</div>
       <div className={styles.fitemsm}>
         <ul className={styles.fitemli}>
           <li>
@@ -159,7 +159,8 @@ const Footer = () => {
         </ul>
       </div>
       <br />
-      <div className={styles.last2}>...Whistler...</div>
+
+      <div className={styles.last2}>...Whistler © Error 404...</div>
     </div>
   );
 };
