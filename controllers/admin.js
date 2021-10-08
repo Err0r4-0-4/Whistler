@@ -28,16 +28,18 @@ exports.loginAdmin = async (req, res, next) => {
 
 exports.assignNgo = async (req, res, next) => {
   try {
-    let ngoCount = await (await Factory.find()).length;
+    let ngoCount = await (await ngo.find()).length;
+    console.log(typeof +req.body.random);
+    console.log("ngoCount", ngoCount);
     let ngoId;
     if (ngoCount === 1) {
       ngoId = 1;
     } else {
-      ngoId = req.body.random % ngoCount;
+      ngoId = +req.body.random % ngoCount;
     }
-    console.log(ngoId);
+    console.log("ngoId", ngoId);
     let n = await ngo.find({ ngoId: ngoId });
-    console.log(n);
+    console.log("ngo", n);
     await ngo.findOneAndUpdate(
       { ngoId: ngoId },
       {
