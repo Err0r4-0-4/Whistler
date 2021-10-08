@@ -60,7 +60,22 @@ exports.assignNgo = async (req, res, next) => {
     return;
   } catch (error) {
     console.log(error);
-    res.status(200).send({ message: error.message });
+    res.status(400).send({ message: error.message });
+    return;
+  }
+};
+
+exports.done = async (req, res, next) => {
+  try {
+    await ngo.findOneAndUpdate(
+      { ngoId: req.body.nogId },
+      { isAssigned: false }
+    );
+    res.status(200).send({ message: "ok Done!" });
+    return;
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ message: error.message });
     return;
   }
 };
