@@ -68,6 +68,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/user/home" exact component={Mainpage3} />
           <Route path="/help" exact component={Help} />
           <Route path="/public/auth" exact component={Public_Auth} />
           <Route path="/admin/auth" exact component={Admin_Auth} />
