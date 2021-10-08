@@ -27,8 +27,8 @@ exports.register = async (req, res, next) => {
     var mailOptions = {
       from: process.env.email,
       to: email,
-      subject: "Credentials for Your Account!",
-      text: `Email: ${email} and Password: ${password} (Keep it safe and don't share this with anyone!)`,
+      subject: "Notice!",
+      text: `You have been added to our Program "WHISTLER"!`,
     };
     transporter
       .sendMail(mailOptions)
