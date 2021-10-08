@@ -69,6 +69,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/user/home" exact component={Mainpage3} />
+          <Route path="/user/previous" exact component={Previous} />
+          <Route path="/user/file" exact component={File} />
           <Route path="/help" exact component={Help} />
           <Route path="/public/auth" exact component={Public_Auth} />
           <Route path="/admin/auth" exact component={Admin_Auth} />
