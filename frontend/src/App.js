@@ -21,36 +21,41 @@ import Mainpage3 from "./Ui/Home/Mainpage3";
 import Assign from "./Components/Assign/Assign";
 import Notfound from "./Ui/Notfound/Notfound";
 function App() {
-
   let routes;
 
-  if(localStorage.getItem("permissions") === "admin"){
-    routes = <div>
-          <Route path="/admin/home" exact component={Mainpage} />
-          <Route path="/admin/factories" exact component={Factories} />
-          <Route path="/admin/complaints" exact component={Complains} />
-          <Route path="/admin/add" exact component={Add} />
-          <Route path="/admin/reports" exact component={Reports} />
-          <Route path="/admin/assign" exact component={Assign} />
-    </div>
+  if (localStorage.getItem("permissions") === "admin") {
+    routes = (
+      <div>
+        <Route path="/admin/home" exact component={Mainpage} />
+        <Route path="/admin/factories" exact component={Factories} />
+        <Route path="/admin/complaints" exact component={Complains} />
+        <Route path="/admin/add" exact component={Add} />
+        <Route path="/admin/reports" exact component={Reports} />
+        <Route path="/admin/assign" exact component={Assign} />
+        <Route path="/*" component={Notfound} />
+      </div>
+    );
+  } else if (localStorage.getItem("permissions") === "ngo") {
+    {
+      console.log(1);
+    }
+    routes = (
+      <div>
+        <Route path="/ngo/home" exact component={Mainpage2} />
+        <Route path="/ngo/inspect" exact component={Inspect} />
+        <Route path="/*" component={Notfound} />
+      </div>
+    );
+  } else if (localStorage.getItem("permissions") === "public") {
+    routes = (
+      <div>
+        <Route path="/user/home" exact component={Mainpage3} />
+        <Route path="/user/previous" exact component={Previous} />
+        <Route path="/user/file" exact component={File} />
+        <Route path="/*" component={Notfound} />
+      </div>
+    );
   }
-
-  else if(localStorage.getItem("permissions") === "ngo"){
-        {console.log(1)}
-        routes = <div>
-          <Route path="/ngo/home" exact component={Mainpage2} />
-          <Route path="/ngo/inspect" exact component={Inspect} />
-    </div>
-  }
-
-  else if(localStorage.getItem("permissions") === "public"){
-    routes = <div>
-          <Route path="/user/home" exact component={Mainpage3} />
-          <Route path="/user/previous" exact component={Previous} />
-          <Route path="/user/file" exact component={File} />
-    </div>
-  }
-
 
   return (
     <Router>
@@ -63,9 +68,6 @@ function App() {
           <Route path="/ngo/auth" exact component={NGO_Auth} />
           <Route path="/factory/auth" exact component={Factory_Auth} />
           {routes}
-          <Route path="/*" component={Notfound} />
-
-      
         </Switch>
       </div>
     </Router>
