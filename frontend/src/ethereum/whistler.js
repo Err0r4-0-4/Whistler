@@ -5,7 +5,7 @@ console.log("Manager.interface", Manager.interface);
 
 const instance = new web3.eth.Contract(
   JSON.parse(Manager.interface),
-  "0xd2D51085b4095Da89027280a90537f17AbDd1400"
+  "0x6957EC212D8B92a643369CcAa31138E88C3558b5"
 );
 
 export default instance;

@@ -27,6 +27,7 @@ const Complains = () => {
         .post("https://whistler-backend.herokuapp.com/factory/count")
         .then(async (res) => {
           setCount(res.data.count);
+          console.log(res.data.count);
 
           for (let i = 1; i <= res.data.count; i++) {
             let c = await Whistler.methods.complaint_count(i).call({
