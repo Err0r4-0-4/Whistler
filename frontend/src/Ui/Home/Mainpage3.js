@@ -7,7 +7,7 @@ import { FaIndustry, FaComment, FaRegFileExcel } from "react-icons/fa";
 import { CgUserlane } from "react-icons/cg";
 import HeaderUser from "../../Header/HeaderUser";
 import Info from "./Info";
-
+import Footer from "../../Footer/Footer";
 const Mainpage3 = () => {
   const [small, setSmall] = useState(false);
   useEffect(() => {
@@ -115,6 +115,7 @@ const Mainpage3 = () => {
       </div>
       <h1 className={styles.title}>Further</h1>
       <Info />
+      <Footer />
     </div>
   );
 };

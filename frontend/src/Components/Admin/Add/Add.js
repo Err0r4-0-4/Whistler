@@ -22,11 +22,13 @@ const Add = () => {
 
   const fun1 = () => {
     setopen1(!open1);
+    setopen2(false);
   };
 
   const [open2, setopen2] = useState(false);
   const fun2 = () => {
     setopen2(!open2);
+    setopen1(false);
   };
   const [factoryName, setFactoryName] = useState("");
   const [factoryEmail, setfactoryEmail] = useState("");
@@ -82,13 +84,15 @@ const Add = () => {
     <div className={styles.page}>
       <Header />
 
-      {loading ? <Spinner/> : null}
+      {loading ? <Spinner /> : null}
 
-      <div className={styles.add1}>
+      <div className={styles.add}>
         <div className={styles.open1} onClick={fun1}>
-          <div className={styles.add1}>
-            {open1 ? "Close Form-" : "Add a new factory +"}
-          </div>
+          {open1 ? (
+            <div className={styles.close1}>Close Form -</div>
+          ) : (
+            <div className={styles.add1}>Add a new factory +</div>
+          )}
         </div>
 
         <div className={open1 ? styles.box : styles.hidden}>
@@ -121,9 +125,11 @@ const Add = () => {
 
       <div>
         <div className={styles.open1} onClick={fun2}>
-          <div className={styles.add1}>
-            {open2 ? "Close Form -" : "Add a new N.G.O. +"}
-          </div>
+          {open2 ? (
+            <div className={styles.close1}>Close Form -</div>
+          ) : (
+            <div className={styles.add1}>Add a new N.G.O +</div>
+          )}
         </div>
 
         <div className={open2 ? styles.box : styles.hidden}>

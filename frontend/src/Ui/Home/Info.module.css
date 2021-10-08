@@ -12,7 +12,7 @@
 .inside2,
 .inside3 {
   background-color: #04a045;
-  margin: 20px;
+  margin: 30px 20px;
   flex: 40%;
   padding: 20px;
   padding-top: 40px;
@@ -76,7 +76,8 @@
 }
 .but1,
 .but2,
-.but3 {
+.but3,
+.but4 {
   display: inline-block;
   padding: 10px 30px;
   border: 1px solid #153045;
@@ -130,12 +131,16 @@
 }
 
 .but3:link,
-.but3:visited {
+.but3:visited,
+.but4:link,
+.but4:visited {
   background-color: #04a045;
   color: white;
 }
 .but3:hover,
-.but3:active {
+.but3:active,
+.but4:hover,
+.but4:active {
   background-color: white;
   color: #04a045;
   border: 2px solid #11a850;
@@ -161,7 +166,24 @@
 }
 
 @media all and (max-width: 700px) {
+  .inside h2,
+  .inside2 h2,
+  .inside3 h2 {
+    font-size: 20px;
+  }
+  .inside p,
+  .inside2 p,
+  .inside3 p {
+    font-size: 15px;
+  }
   .box {
     width: 100%;
+  }
+  .but1,
+  .but2,
+  .but3,
+  .but4 {
+    font-size: 16px;
+    padding: 10px 15px;
   }
 }

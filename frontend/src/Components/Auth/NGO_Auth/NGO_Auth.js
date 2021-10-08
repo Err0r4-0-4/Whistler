@@ -22,7 +22,6 @@ const NGO_Auth = () => {
   const [loading, setLoading] = useState(false);
 
   const onLoginHandler = () => {
-
     setLoading(true);
 
     const data = {
@@ -46,7 +45,7 @@ const NGO_Auth = () => {
         localStorage.setItem("permissions", "ngo");
         setRedirect(true);
         setLoading(false);
-        window.location.reload()
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -57,8 +56,7 @@ const NGO_Auth = () => {
 
   return (
     <div className={styles.fullpage}>
-
-      {loading ? <Spinner/> : null}
+      {loading ? <Spinner /> : null}
 
       <div className={styles.header}>
         <div className={styles.logo_name}>
@@ -73,7 +71,7 @@ const NGO_Auth = () => {
 
         <div className={styles.fifty}>
           <div className={styles.select}>
-            <Link to="#">Help</Link>
+            <Link to="/help">Help</Link>
           </div>
         </div>
       </div>

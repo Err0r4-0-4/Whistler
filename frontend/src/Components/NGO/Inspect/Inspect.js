@@ -57,6 +57,28 @@ const Inspect = (props) => {
     }
   };
 
+  const onFinishHandler = () => {
+    onInspectHandler();
+
+    const data = {
+      ngoId: localStorage.getItem("ngoId")
+    };
+
+    console.log(data);
+
+    axios
+      .post("https://whistler-backend.herokuapp.com/admin/done", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    localStorage.setItem("isAssigned", "false");
+    window.location.reload();
+  }
+
   let form = (
     <div>
       <div className={styles.tileup}>
@@ -88,10 +110,12 @@ const Inspect = (props) => {
               <p>Inspection Date: </p>
               <div className={styles.group}>{localStorage.getItem("date")}</div>
             </div>
-            {!show && (
+            {!show ? (
               <div onClick={func1} className={styles.btn}>
                 Inspect
               </div>
+            ) : (
+              <br />
             )}
           </div>
         </div>
@@ -127,10 +151,11 @@ const Inspect = (props) => {
           onChange={(event) => setInspector(event.target.value)}
           className={styles.inp}
         />
-        <button className={styles.btn2}>UPLOAD</button>
+        <button className={styles.btn2}
+        onClick={onInspectHandler} >Submit and Add Another Report</button>
 
-        <button onClick={onInspectHandler} className={styles.btn2}>
-          SUBMIT
+        <button className={styles.btn2} onClick={onFinishHandler}>
+          SUBMIT and Finish Inspection
         </button>
       </div>
     </div>

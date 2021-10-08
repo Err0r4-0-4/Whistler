@@ -2,8 +2,9 @@
   background-color: #d6f3d8;
   text-align: center;
   padding-bottom: 20px;
-  padding-top: 50px;
+  padding-top: 100px;
   margin-bottom: -50px;
+  height: 100vh;
 }
 
 .center h1 {

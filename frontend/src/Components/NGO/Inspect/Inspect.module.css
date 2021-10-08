@@ -22,7 +22,6 @@
   padding: 0 5% 0 0;
   padding-left: 0;
   margin: auto;
-  margin-left: 0;
 }
 .bar {
   background-color: #009c00;
@@ -125,6 +124,7 @@
 @media all and (max-width: 1200px) {
   .tile {
     width: 93%;
+    margin: auto;
   }
 }
 
@@ -354,6 +354,14 @@
   .inp {
     width: 90%;
   }
+
+  .inp,
+  .txt,
+  .btn,
+  .sel,
+  .btn2 {
+    min-width: 200px;
+  }
 }
 
 @media all and (max-width: 600px) {
@@ -384,6 +392,14 @@
   .box {
     min-width: 300px;
     margin: 100px auto;
+  }
+
+  .inp,
+  .txt,
+  .btn,
+  .sel,
+  .btn2 {
+    min-width: 200px;
   }
 }
 

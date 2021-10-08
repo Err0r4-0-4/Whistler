@@ -24,11 +24,11 @@ const Complain = (props) => {
             <div>{props.phone}</div>
           </div>
         </div>
-        <div className={styles.one}>
-          <p>Hash :</p>
-          <div className={styles.group}>{props.hash}</div>
+        <div>
+          <a className={styles.btn} href={props.hash}>
+            View Proof
+          </a>
         </div>
-
         {/* <div onClick={() => props.assign(props.id)} className={styles.btn}>
           SCHEDULE
         </div> */}

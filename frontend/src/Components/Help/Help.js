@@ -3,8 +3,20 @@ import styles from "./Help.module.css";
 import { AiOutlineDown } from "react-icons/ai";
 import ParticlesBg from "particles-bg";
 import { Link, useLocation } from "react-router-dom";
-
+import Header from "../../Header/Header";
+import Headerngo from "../../Header/Headerngo";
+import HeaderUser from "../../Header/HeaderUser";
 const Help = () => {
+  let routes = false;
+
+  if (localStorage.getItem("permissions") === "admin") {
+    routes = <Header />;
+  } else if (localStorage.getItem("permissions") === "ngo") {
+    routes = <Headerngo />;
+  } else if (localStorage.getItem("permissions") === "public") {
+    routes = <HeaderUser />;
+  }
+
   const [prob, setprob] = useState(false);
   const probf = () => {
     setprob(!prob);
@@ -38,11 +50,16 @@ const Help = () => {
   };
   return (
     <div className={styles.page}>
-      <div className={styles.fifty}>
-        <div className={styles.select}>
-          <Link to="/">Login</Link>
+      {routes ? (
+        routes
+      ) : (
+        <div className={styles.fifty}>
+          <div className={styles.select}>
+            <Link to="/">Login</Link>
+          </div>
         </div>
-      </div>
+      )}
+
       <div className={styles.big}>
         <div className={styles.small} onClick={probf}>
           <div className={styles.heading}>Problem</div>

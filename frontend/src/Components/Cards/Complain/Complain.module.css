@@ -60,6 +60,8 @@
 }
 
 .btn {
+  display: block;
+  text-decoration: none;
   width: 80%;
   margin: 20px auto 0;
   color: white;
@@ -98,18 +100,21 @@
 @media all and (max-width: 1200px) {
   .tile {
     width: 93%;
+    margin: 25px auto;
   }
 }
 
 @media all and (max-width: 800px) {
   .tile {
+    margin: 20px auto;
     width: 91%;
   }
 }
 
 @media all and (max-width: 650px) {
   .tile {
-    width: 88%;
+    margin: 15px auto;
+    width: 84%;
   }
 
   .btn {

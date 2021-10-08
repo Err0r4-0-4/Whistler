@@ -3,7 +3,7 @@ import styles from "./Info.module.css";
 import { FiUserPlus, FiShare2, FiList } from "react-icons/fi";
 import { BiDonateBlood, BiListPlus } from "react-icons/bi";
 import { Link } from "react-router-dom";
-const Info = () => {
+const Info2 = () => {
   return (
     <div className={styles.box}>
       <div className={styles.inside}>
@@ -16,16 +16,13 @@ const Info = () => {
           />
         </div>
 
-        <h2>Add new Factory / N.G.O</h2>
+        <h2>Add a Donor</h2>
         <p>
-          We can add new factories to the list, for which we can keep track and
-          evaluate their stats on various grounds.
-          <br />
-          The administrator can add a new N.G.O to participate in the initiative
-          and can further participate in the inspection process.
+          We add a new donor and fill all important information such as Aadhar
+          Number, Name, Contact Information and Location.
         </p>
-        <Link to="/admin/add" className={styles.but1}>
-          Add factory
+        <Link to="new" className={styles.but1}>
+          New Donor
         </Link>
       </div>
       <div className={styles.inside2}>
@@ -37,14 +34,13 @@ const Info = () => {
             color="white"
           />
         </div>
-        <h2>Visit Complaints / Reports</h2>
+        <h2>Existing Donor</h2>
         <p>
-          The administrator can view all the complainst filed by public and
-          reports of inspections by various N.G.Os and take actions on basis of
-          it.
+          We should have a pre-existing donor with a registered Aadhar Number
+          and proceed with Blood Donation.
         </p>
-        <Link to="/admin/complaints" className={styles.but3}>
-          User Complaints
+        <Link to="donate" className={styles.but3}>
+          Donate
         </Link>
       </div>
       <div className={styles.inside3}>
@@ -57,17 +53,17 @@ const Info = () => {
           />
         </div>
 
-        <h2>Work Distribution</h2>
+        <h2>Useful List</h2>
         <p>
-          The administrator will have authority inspect a factory. But the
-          N.G.O. involved in the process will be random.
+          Conatins all the useful lists of Patients and Other hospital also
+          providing privacy to Donors.
         </p>
-        <Link to="/admin/factories" className={styles.but1}>
-          view factory
+        <Link to="list" className={styles.but1}>
+          Lists
         </Link>
       </div>
     </div>
   );
 };
 
-export default Info;
+export default Info2;
