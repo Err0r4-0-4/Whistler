@@ -37,6 +37,9 @@ exports.assignNgo = async (req, res, next) => {
     } else {
       ngoId = +req.body.random % ngoCount;
     }
+    if (ngoId === 0) {
+      ngoId = 1;
+    }
     console.log("ngoId", ngoId);
     let n = await ngo.find({ ngoId: ngoId });
     console.log("ngo", n);
