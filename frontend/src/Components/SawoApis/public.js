@@ -10,7 +10,7 @@ const LoginPage = () => {
         console.log(payload.identifier);
         localStorage.setItem("phone", payload.identifier);
         localStorage.setItem("permissions", "public");
-        window.location.reload();
+        // window.location.reload();
         setRedirect(true);
         console.log("....");
     }
