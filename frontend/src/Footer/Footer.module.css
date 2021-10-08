@@ -8,7 +8,7 @@
   width: 100vw;
   margin: auto;
   margin-top: 100px;
-  z-index: 100000;
+  z-index: 50000;
 
   font-size: 16px;
   position: relative;

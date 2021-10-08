@@ -60,6 +60,8 @@
 }
 
 .btn {
+  display: block;
+  text-decoration: none;
   width: 80%;
   margin: 20px auto 0;
   color: white;
