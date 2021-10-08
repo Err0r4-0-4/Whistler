@@ -26,13 +26,15 @@ function App() {
   if (localStorage.getItem("permissions") === "admin") {
     routes = (
       <div>
-        <Route path="/admin/home" exact component={Mainpage} />
-        <Route path="/admin/factories" exact component={Factories} />
-        <Route path="/admin/complaints" exact component={Complains} />
-        <Route path="/admin/add" exact component={Add} />
-        <Route path="/admin/reports" exact component={Reports} />
-        <Route path="/admin/assign" exact component={Assign} />
-        
+        <Switch>
+          <Route path="/admin/home" exact component={Mainpage} />
+          <Route path="/admin/factories" exact component={Factories} />
+          <Route path="/admin/complaints" exact component={Complains} />
+          <Route path="/admin/add" exact component={Add} />
+          <Route path="/admin/reports" exact component={Reports} />
+          <Route path="/admin/assign" exact component={Assign} />
+          <Route path="/*" component={Notfound} />
+        </Switch>
       </div>
     );
   } else if (localStorage.getItem("permissions") === "ngo") {
@@ -41,18 +43,22 @@ function App() {
     }
     routes = (
       <div>
-        <Route path="/ngo/home" exact component={Mainpage2} />
-        <Route path="/ngo/inspect" exact component={Inspect} />
-
+        <Switch>
+          <Route path="/ngo/home" exact component={Mainpage2} />
+          <Route path="/ngo/inspect" exact component={Inspect} />
+          <Route path="/*" component={Notfound} />
+        </Switch>
       </div>
     );
   } else if (localStorage.getItem("permissions") === "public") {
     routes = (
       <div>
-        <Route path="/user/home" exact component={Mainpage3} />
-        <Route path="/user/previous" exact component={Previous} />
-        <Route path="/user/file" exact component={File} />
-
+        <Switch>
+          <Route path="/user/home" exact component={Mainpage3} />
+          <Route path="/user/previous" exact component={Previous} />
+          <Route path="/user/file" exact component={File} />
+          <Route path="/*" component={Notfound} />
+        </Switch>
       </div>
     );
   }
@@ -62,6 +68,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/user/home" exact component={Mainpage3} />
           <Route path="/help" exact component={Help} />
           <Route path="/public/auth" exact component={Public_Auth} />
           <Route path="/admin/auth" exact component={Admin_Auth} />

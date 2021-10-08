@@ -19,6 +19,7 @@ const File = (props) => {
   const [list, setList] = useState([]);
   const [date, setDate] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [file, setFile] = useState(false);
 
   const onComplainHandler = async () => {
     const accounts = await web3.eth.getAccounts();
@@ -30,17 +31,28 @@ const File = (props) => {
     console.log(localStorage.getItem("phone"));
 
     try{
-      await Whistler.methods
-      .file_complain(
-        id,
-        desc,
-        date,
-        "aaaaaaaaaaaaaaaa",
-        localStorage.getItem("phone")
-      )
-      .send({
-        from: accounts[0],
-      });
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const res = await axios.post(
+        "https://whistler-backend.herokuapp.com/public/upload",
+        formData
+      );
+
+      console.log(res);
+
+      // await Whistler.methods
+      // .file_complain(
+      //   id,
+      //   desc,
+      //   date,
+      //   "aaaaaaaaaaaaaaaa",
+      //   localStorage.getItem("phone")
+      // )
+      // .send({
+      //   from: accounts[0],
+      // });
 
       setLoading(false);
     }catch(e) {
@@ -131,7 +143,12 @@ const File = (props) => {
           className={styles.txt}
         ></textarea>
 
-        <button className={styles.btn2}>UPLOAD</button>
+        <input
+          type="file"
+          onChange={(event) => setFile(event.target.files[0])}
+          style={{ width: "100%", margin: "20px 0", border: "1px solid #ccc" }}
+        />
+
         <button onClick={onComplainHandler} className={styles.btn}>
           SUBMIT
         </button>
