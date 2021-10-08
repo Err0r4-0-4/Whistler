@@ -41,10 +41,10 @@ const Footer = () => {
           <Link href="/ngo/home">Home</Link>
         </li>
         <li>
-          <Link href="/ngo/complaints">Inspect Requests</Link>
+          <Link href="/ngo/complaints">Inspect_Requests</Link>
         </li>
         <li>
-          <Link href="/admin/report">Older Inspections</Link>
+          <Link href="/admin/report">Older_Inspections</Link>
         </li>
 
         <li>
@@ -101,21 +101,30 @@ const Footer = () => {
             </li>
 
             <li>
-              <a href="#" target="_blank">
-                Doc1
+              <a
+                href="https://www.hindawi.com/journals/jeph/2020/4754780/"
+                target="_blank"
+              >
+                Corruption
               </a>
             </li>
 
             <h2>Links</h2>
             <li>
-              <a href="#" target="_blank">
-                Doc1
+              <a
+                href="https://www.youtube.com/watch?v=_NkqwMitQ8o"
+                target="_blank"
+              >
+                Introduction
               </a>
             </li>
 
             <li>
-              <a href="#" target="_blank">
-                Doc1
+              <a
+                href="https://www.youtube.com/watch?v=_NkqwMitQ8o"
+                target="_blank"
+              >
+                Managing_Waste
               </a>
             </li>
           </ul>
